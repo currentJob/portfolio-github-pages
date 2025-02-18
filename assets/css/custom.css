@@ -69,3 +69,8 @@ img {
 .button:hover {
     background-color: #0056b3;
 }
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
