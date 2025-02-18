@@ -4,6 +4,5 @@ title: "About"
 permalink: /about/
 ---
 
-
-<h1>Welcome to My Jekyll Site</h1>
-<p>This is the about page.</p>
+# About Page
+이 페이지는 About 페이지입니다.
