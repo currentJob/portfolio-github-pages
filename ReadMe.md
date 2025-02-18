@@ -7,6 +7,7 @@
 
 ## 📂 프로젝트 폴더 구조
 
+```
 project/
 ├── _config.yml          # 사이트 설정 파일
 ├── _config.dev.yml      # 개발 환경 설정 파일 (옵션)
@@ -44,3 +45,4 @@ project/
 ├── Gemfile              # Jekyll 및 플러그인 관리 파일
 ├── Gemfile.lock         # Bundler가 관리하는 종속성 파일
 └── .gitignore           # Git 무시 파일 목록
+```
