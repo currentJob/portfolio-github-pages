@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/custom.css">
-    <title>{{ site.title }}</title>
+    <title>{{ page.title }}</title>
 </head>
 <body>
-    {% include header.html %}
-    <div class="main">
-        {{ content }}
+    {% include header.html %}  <!-- 헤더 포함 -->
+
+    <div class="content">
+        {{ content }}  <!-- 개별 페이지의 콘텐츠가 여기에 삽입됨 -->
     </div>
-    {% include footer.html %}
+
+    {% include footer.html %}  <!-- 푸터 포함 -->
 </body>
 </html>
