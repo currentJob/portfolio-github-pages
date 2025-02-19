@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    {% include header.html %}  <!-- 헤더 포함 -->
+
+    <div class="content">
+        {% include sidebar.html %}  <!-- 사이드바 포함 -->
+        {{ content }}  <!-- 개별 페이지의 콘텐츠가 여기에 삽입됨 -->
+    </div>
+
+    {% include footer.html %}  <!-- 푸터 포함 -->
+</body>
+</html>
