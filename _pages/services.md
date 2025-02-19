@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Services"
+layout: post
+title: Services
 permalink: /services/
 ---
 

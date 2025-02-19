@@ -36,7 +36,7 @@ project/
 │   ├── images/          # 이미지 리소스
 │   │   ├── logo.png     # 로고 이미지
 │   │   ├── banner.jpg   # 배너 이미지
-├── pages/               # 개별 페이지 (예: 소개, 연락처)
+├── _pages/               # 개별 페이지 (예: 소개, 연락처)
 │   ├── about.md         # 소개 페이지
 │   ├── contact.md       # 연락처 페이지
 ├── 404.html             # 404 에러 페이지
