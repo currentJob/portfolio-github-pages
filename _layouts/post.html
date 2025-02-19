@@ -10,6 +10,7 @@
     {% include header.html %}  <!-- 헤더 포함 -->
 
     <div class="content">
+        <h1>{{ page.title }}</h1>
         {% include sidebar.html %}  <!-- 사이드바 포함 -->
         {{ content }}  <!-- 개별 페이지의 콘텐츠가 여기에 삽입됨 -->
     </div>
