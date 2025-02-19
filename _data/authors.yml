@@ -1,0 +1,23 @@
+- id: john_doe
+  name: John Doe
+  bio: John is a software engineer with over 10 years of experience in web development.
+  avatar: /images/john_doe.jpg
+  social:
+    twitter: https://twitter.com/johndoe
+    github: https://github.com/johndoe
+
+- id: jane_smith
+  name: Jane Smith
+  bio: Jane is a data scientist who specializes in machine learning and AI.
+  avatar: /images/jane_smith.jpg
+  social:
+    twitter: https://twitter.com/janesmith
+    github: https://github.com/janesmith
+
+- id: alice_jones
+  name: Alice Jones
+  bio: Alice is a front-end developer with a passion for creating beautiful and responsive websites.
+  avatar: /images/alice_jones.jpg
+  social:
+    twitter: https://twitter.com/alicejones
+    github: https://github.com/alicejones
