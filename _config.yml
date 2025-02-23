@@ -24,8 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   안녕하세요! 이 블로그는 **CurrentJob**의 개발 여정을 기록하는 공간입니다.
   이곳에서는 제 기술 역량, 수행한 프로젝트, 개발하면서 배운 지식 및 경험을 공유합니다.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
+url: "https://currentJob.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: currentJob
 
 collections:
