@@ -3,7 +3,7 @@ layout: page
 title: About
 date: 2025-02-17 22:47:40 -0600
 categories: jekyll update
-permalink: /about/
+permalink: /about
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
