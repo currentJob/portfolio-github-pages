@@ -31,6 +31,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
 
 # Build settings
 theme: minima
