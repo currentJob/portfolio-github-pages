@@ -1,20 +1,20 @@
 ---
 layout: portfolio
-title: "Project: Community Board"
-description: "Django 웹 프레임워크를 기반으로 구축된 자유게시판 및 커뮤니티 운영 플랫폼입니다."
-tech: ["Django", "Python", "HTML/CSS"]
-repo_url: "https://github.com/currentJob/project-CommunityBoard"
-image: "/assets/images/portfolio-board.png"
+title: "실시간 모니터링 시스템"
+description: "공정 가스 플라즈마 전처리 시스템의 실시간 통합 진단 모니터링 플랫폼 개발"
+tech: ["WPF", "MVVM", "OOP", "MSA", "C#"]
 order: 1
 ---
 
 ### 📌 프로젝트 개요
-`project-CommunityBoard`는 Python의 **Django 프레임워크**를 적극적으로 활용하여 웹 애플리케이션의 뼈대부터 데이터베이스 연동까지 전체 구조를 설계한 게시판 프로젝트입니다. 회원 관리와 게시글 등록, 수정, 삭제 등의 필수적인 CRUD 로직을 완벽하게 다루며 웹 개발의 기본 체력을 다졌습니다.
+**사업 규모**: 30.3억 원 규모
+공정 가스 플라즈마 전처리 시스템의 실시간 통합 진단 모니터링 플랫폼을 개발하였습니다. 다양한 이기종 장비를 단일 인터페이스로 통합 관리 및 제어할 수 있는 구조를 전면적으로 새롭게 구축하였습니다.
 
 ### 💡 주요 기능 및 구현 포인트
-- **사용자 인증 (Auth) 시스템**: 사용자 가입, 로그인, 로그아웃의 라이프사이클 구현.
-- **ORM 기반 데이터베이스 설계**: 모델 관계도(Model Relations)를 구축하여 안전하고 체계적인 데이터베이스 통신.
-- **MVC/MVT 패턴 이해**: Django의 MVT 디자인 패턴 모델에 맞춰 비즈니스 로직과 화면 프레젠테이션 테마 분리.
+- **이기종 인터페이스 추상화**: RS-232, Ethernet 등 이기종 하드웨어 인터페이스를 추상화.
+- **다양한 통신 프로토콜 모듈화**: Serial, Modbus RTU/TCP, SCPI 등 다양한 통신 프로토콜 모듈화 및 공통 인터페이스 설계.
+- **다중 장비 연결 및 비동기 제어**: 장비별 Command 파일 관리 체계를 구축하고 통합 통신 제어 로직 설계.
+- **MVVM 구조 설계**: View와 ViewModel을 완전히 분리하여 다양한 환경(GUI/CUI 등)에 유연하게 대응 구축. INotifyPropertyChanged, RelayCommand 기반 구독형 이벤트 처리 및 상태 바인딩 로직 구현.
 
-<br>
-<a href="https://github.com/currentJob/project-CommunityBoard" class="btn" target="_blank">GitHub에서 소스코드 보기</a>
+### 🏆 업무 성과
+다중 프로토콜 장비를 하나의 시스템에서 통합 제어할 수 있는 체계를 완성했습니다. 효율성과 재사용성을 고려한 설계로, 장비 추가 및 UI 전환 시의 유지보수 비용을 크게 절감했으며, 향후 후속 과제 시스템 구축을 위한 단단한 소프트웨어적 기반을 확보하는 성과를 거두었습니다.

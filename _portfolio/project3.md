@@ -1,22 +1,20 @@
 ---
 layout: portfolio
-title: "Data Science & NLP Study"
-description: "빅데이터 및 자연어 처리(NLP), 플라스크 등 인공지능/서버 파이프라인 실습 저장소 모음"
-tech: ["Python", "Jupyter", "Machine Learning"]
-repo_url: "https://github.com/currentJob/study-NLP"
+title: "AI 차체 프레임 용접 판정 솔루션"
+description: "이상 탐지 모델 기반 차체 용접 불량 검사 지능화 솔루션 개발"
+tech: ["Vision", "PySide", "Model", "Python", "API"]
 order: 3
 ---
 
-### 📌 모음집 개요
-`study-BigData`, `study-NLP`, `study-webScraping`, 파이썬 `pandas` 등 데이터를 파싱하고 정제하여 인공지능이 학습하기 좋은 형태로 가공하는 일련의 **빅데이터 분석 강의 내용과 파이프라인 실습 코드** 모음입니다.
+### 📌 프로젝트 개요
+**사업 규모**: 5억 원 규모
+Variational Auto-Encoder(VAE) 모델을 기반으로 한 딥러닝 영상 처리를 사용하여, 차체 프레임의 용접 불량을 지능적으로 검사하는 최신 자동화 솔루션입니다. 제품의 신뢰성과 안전을 위해 시각 정보를 바탕으로 판정하는 모델을 구상했습니다.
 
-### 💡 학습 및 구현 기술 스택
-- **자연어 처리 (NLP)**: 텍스트 마이닝 및 자연어의 이해, 워드 임베딩(Word Embedding) 실습.
-- **빅데이터 수집**: Python을 활용한 크롤러 및 `webScraping` 구현으로 정형/비정형 데이터 수집 능력 기반 구축.
-- **데이터 분석 및 시각화**: `Pandas` 등의 라이브러리로 대용량 구조화 데이터를 조작하고 시각화하기.
+### 💡 주요 기능 및 구현 포인트
+- **영상 제어 시스템 확보**: 카메라 장비 연동을 위한 이미지 취득 및 제어 API 모듈 개발, 이를 바탕으로 자동 판정 파이프라인 구성.
+- **GUI 앱 아키텍처 디자인**: PySide (PyQt) 라이브러리 기반의 직관적인 데스크톱 GUI 애플리케이션 설계 및 시스템 환경 설정.
+- **딥러닝 VAE 이상 탐지**: 불량 데이터를 모의하고 이를 VAE 알고리즘으로 이상을 탐지하는 프로세스 개발, 성능 검증 진행.
+- **예측 관리 DB 구현**: 불량 모델의 학습 및 추론 결과들을 빠르고 직관적으로 파악할 수 있도록 연동된 데이터베이스 설계 및 분석 시스템 적용.
 
-<br>
-<div style="display:flex; gap:10px;">
-    <a href="https://github.com/currentJob/study-NLP" class="btn" target="_blank">NLP Repo</a>
-    <a href="https://github.com/currentJob/study-BigData" class="btn btn-secondary" target="_blank">BigData Repo</a>
-</div>
+### 🏆 업무 성과
+고수준의 AI 비전 모델을 현업에 성공적으로 전개하여, 후속 사업을 연이어 수주하는 결과를 달성했습니다. 뿐만 아니라 해당 프로젝트 결과를 기반으로 한 기술 특허 등록과 학회 논문 발표를 이루어, 회사의 대외적인 기술적 이미지 제고에 큰 기여를 했습니다.

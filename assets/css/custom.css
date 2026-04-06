@@ -1,15 +1,15 @@
-/* Ultra-Dynamic & Visual Wow Dark Mode Theme */
+/* Ultra-Dynamic & Light Mode Wow Theme */
 :root {
-  --bg-color: #050505;
-  --surface: rgba(15, 15, 15, 0.4);
-  --surface-hover: rgba(30, 30, 30, 0.6);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.2);
-  --text-main: #f8f9fa;
-  --text-muted: #adb5bd;
-  --accent: #00f2fe;
-  --accent-secondary: #4facfe;
-  --neon-glow: 0 0 20px rgba(0, 242, 254, 0.4), 0 0 40px rgba(79, 172, 254, 0.2);
+  --bg-color: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent: #2563eb;
+  --accent-secondary: #3b82f6;
+  --neon-glow: 0 10px 30px rgba(37, 99, 235, 0.15), 0 0 15px rgba(59, 130, 246, 0.1);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 8px;
@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Background Animated Gradient Blobs */
+/* Background Animated Gradient Blobs (Soft Pastel) */
 body::before, body::after {
   content: "";
   position: fixed;
@@ -43,16 +43,16 @@ body::before, body::after {
   z-index: -1;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.4;
+  opacity: 0.6;
   animation: floatBackground 15s infinite alternate ease-in-out;
 }
 body::before {
-  background: radial-gradient(circle at 20% 30%, rgba(79, 172, 254, 0.3), transparent 60%);
+  background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15), transparent 60%);
   width: 60vw; height: 60vh;
   left: -10vw; top: -10vh;
 }
 body::after {
-  background: radial-gradient(circle at 80% 80%, rgba(255, 8, 68, 0.2), transparent 50%);
+  background: radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1), transparent 50%);
   width: 50vw; height: 50vw;
   right: -10vw; bottom: -20vh;
   animation-delay: -5s;
@@ -69,14 +69,13 @@ a {
   transition: var(--transition);
 }
 a:hover {
-  text-shadow: var(--neon-glow);
   color: var(--accent);
 }
 
 /* Header */
 .glass-header {
   width: 100%;
-  background: rgba(5, 5, 5, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
@@ -93,9 +92,9 @@ a:hover {
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,7 +103,7 @@ a:hover {
 .logo-text {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(to right, #00f2fe, #4facfe, #00f2fe);
+  background: linear-gradient(to right, #2563eb, #3b82f6, #2563eb);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,11 +114,11 @@ a:hover {
   to { background-position: 200% center; }
 }
 
-/* Layout Content Box */
+/* Layout Content Box (Reduced Margins) */
 .content.wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 2rem auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   gap: 2rem;
   flex: 1;
@@ -144,9 +143,10 @@ a:hover {
   border-radius: var(--radius-md);
   backdrop-filter: blur(15px);
   transition: var(--transition);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 .glass-sidebar:hover {
-  border-color: rgba(0, 242, 254, 0.4);
+  border-color: rgba(37, 99, 235, 0.3);
   box-shadow: var(--neon-glow);
 }
 
@@ -180,7 +180,7 @@ a:hover {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 0%; height: 100%;
-  background: linear-gradient(90deg, rgba(0,242,254,0.1), transparent);
+  background: linear-gradient(90deg, rgba(37,99,235,0.08), transparent);
   transition: width 0.4s ease;
   z-index: -1;
 }
@@ -213,7 +213,7 @@ a:hover {
 
 /* Animated Gradient Text */
 .text-gradient {
-  background: linear-gradient(to right, #00f2fe, #4facfe, #ff0844, #ffb199);
+  background: linear-gradient(to right, #2563eb, #7c3aed, #ec4899, #2563eb);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -231,7 +231,7 @@ a:hover {
   backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
   transform-origin: center;
   animation: revealUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -245,7 +245,7 @@ a:hover {
   content: '';
   position: absolute;
   top: -50%; left: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
   transform: rotate(30deg);
   pointer-events: none;
   animation: rotatingGlow 20s linear infinite;
@@ -264,7 +264,6 @@ a:hover {
   font-size: 3.8rem;
   line-height: 1.15;
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
 .hero h2 {
@@ -279,13 +278,13 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1.8rem;
-  background: linear-gradient(45deg, #00f2fe, #4facfe);
-  color: #000;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: #ffffff;
   border-radius: 99px;
   font-weight: 700;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
   transition: var(--transition);
   cursor: pointer;
   position: relative;
@@ -301,15 +300,9 @@ a:hover {
   animation: flash 3s infinite;
 }
 
-@keyframes flash {
-  0% { left: -100%; }
-  20% { left: 200%; }
-  100% { left: 200%; }
-}
-
 .btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 242, 254, 0.6);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
   color: #fff;
 }
 
@@ -321,8 +314,8 @@ a:hover {
 }
 .btn-secondary::after { display: none; }
 .btn-secondary:hover {
-  background: rgba(0, 242, 254, 0.1);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+  background: rgba(37, 99, 235, 0.05);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.1);
   color: var(--accent);
 }
 
@@ -345,6 +338,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .bento-card::before {
@@ -353,7 +347,7 @@ a:hover {
   top: 0; left: 0; right: 0; bottom: 0;
   border-radius: var(--radius-md);
   padding: 2px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%, rgba(0,242,254,0.4) 100%);
+  background: linear-gradient(135deg, rgba(37,99,235,0.4) 0%, transparent 50%, rgba(124,58,237,0.4) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -364,7 +358,7 @@ a:hover {
 .bento-card:hover {
   transform: translateY(-10px) scale(1.02);
   background: var(--surface-hover);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 254, 0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 20px rgba(37, 99, 235, 0.05);
 }
 
 .bento-card:hover::before {
@@ -397,18 +391,18 @@ a:hover {
 .tech-badge {
   font-size: 0.75rem;
   padding: 0.4rem 0.8rem;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(37,99,235,0.05);
+  border: 1px solid rgba(37,99,235,0.1);
   border-radius: 99px;
-  color: var(--accent-secondary);
+  color: var(--accent);
   transition: var(--transition);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .bento-card:hover .tech-badge {
-  background: rgba(0, 242, 254, 0.1);
-  border-color: rgba(0, 242, 254, 0.3);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 /* Footer */
@@ -442,10 +436,9 @@ a:hover {
 .social-links a:hover {
   color: var(--accent);
   transform: scale(1.2);
-  text-shadow: var(--neon-glow);
 }
 
-/* Staggered load animation for elements */
+/* Staggered load animation */
 .bento-card:nth-child(1) { animation: slideUp 0.6s ease 0.2s both; }
 .bento-card:nth-child(2) { animation: slideUp 0.6s ease 0.4s both; }
 .bento-card:nth-child(3) { animation: slideUp 0.6s ease 0.6s both; }

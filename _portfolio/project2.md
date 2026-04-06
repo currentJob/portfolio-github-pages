@@ -1,19 +1,20 @@
 ---
 layout: portfolio
-title: "Jekyll Blog & Portfolio UI"
-description: "현재 보고 계시는 반응형 웹 블로그 및 화려한 인터랙티브 포트폴리오 사이트 (currentJob.github.io)"
-tech: ["Jekyll", "HTML5", "CSS3"]
-repo_url: "https://github.com/currentJob/currentJob.github.io"
+title: "금형 수명 예측 모델 시스템"
+description: "실시간 PLC 장비 통신으로 금형 수명 예측 시스템 개발"
+tech: ["FastAPI", "Django", "RESTful API", "Python"]
 order: 2
 ---
 
 ### 📌 프로젝트 개요
-현재 접속해 계신 이 웹사이트(블로그)입니다. 기존의 단순한 사이드바 레이아웃 블로그를 넘어, 최신 트렌드인 **미니멀리즘(Minimalism)**과 **Bento UI Grid**, 그리고 우주를 연상시키는 **홀로그래픽 그라데이션 및 CSS 3D Hover 애니메이션** 기법을 적용하여 화려하게 탈바꿈시킨 프론트엔드 최적화 작업물입니다.
+**사업 규모**: 4,000만 원 규모
+불량률 예측 기반의 베이지안 추론을 이용하여, 금형 잔여 수명(RUL) 예측 시스템을 성공적으로 구현하였습니다. 실시간 장비 데이터를 파이프라인으로 연결하여 실질적인 AI 모델 서빙 환경을 마련했습니다.
 
 ### 💡 주요 기능 및 구현 포인트
-- **Pure CSS Animations**: 무거운 자바스크립트 프레임워크 없이 순수 CSS3만으로 고성능 인터랙션 구현.
-- **반응형 웹 사이트 구축**: flexbox 및 grid를 조합하여 PC, 태블릿, 모바일 기기 모두에 대응하는 매끄러운 반응형 디자인 확보.
-- **포트폴리오 아키텍처 자동화**: Jekyll의 Collection 시스템을 통해 `_portfolio` 폴더 내에 마크다운만 생성해도 자동으로 렌더링되도록 자동화.
+- **센서 데이터 수집/DB 구축**: 체계적인 금형 상태 분석을 위해 최적화된 센서 데이터 수집 구조를 정의하고 맵핑.
+- **PLC 실시간 자동 수집**: Modbus TCP 기반 통신을 통해 PLC로부터 주기적인 데이터 자동 파싱 및 수집.
+- **실시간 스트리밍 시스템**: FastAPI 기반의 백엔드와 Django를 WebSocket으로 연동하여 원활한 실시간 데이터 스트리밍 서비스 구현.
+- **반응형 대시보드 시각화**: 각종 그래프 및 게이지 등 센서 데이터 특성에 가장 어울리는 반응형 웹 대시보드 컴포넌트 환경 설계.
 
-<br>
-<a href="https://github.com/currentJob/currentJob.github.io" class="btn" target="_blank">GitHub에서 소스코드 보기</a>
+### 🏆 업무 성과
+제품 등록부터 실시간 모니터링까지 전방위적인 제품 관리 체계를 웹 서비스 형태로 제공할 수 있게 되었습니다. 더불어 수명 예측 모델 기반의 사전 경고 시스템이 구축됨으로써 설비의 무중단 생산률을 높이고 비용을 성공적으로 감축할 수 있었습니다.
