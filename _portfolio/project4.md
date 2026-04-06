@@ -1,21 +1,11 @@
 ---
-layout: default
+layout: portfolio
 title: "Java SpringBoot API Server"
 description: "스프링 부트를 이용한 백엔드 서버 로직 및 빅데이터 분석 연동 실습 시스템"
 tech: ["Java", "Spring Boot", "JSP"]
 repo_url: "https://github.com/currentJob/SPRINGBOOT"
 order: 4
 ---
-
-<div class="hero" style="min-height: auto; padding: 3rem; margin-bottom: 2rem;">
-    <h1>Spring Boot Applications</h1>
-    <h2>견고하고 확장 가능한 Java 스프링부트 백엔드 & JSP 구축</h2>
-    <div class="tech-stack" style="margin-top: 1rem;">
-        <span class="tech-badge">Java</span>
-        <span class="tech-badge">Spring Boot</span>
-        <span class="tech-badge">JSP</span>
-    </div>
-</div>
 
 ### 📌 프로젝트 개요
 백엔드 웹 생태계의 표준 기술인 **Java Spring Boot**와 전통적 뷰 렌더링 솔루션인 **JSP**, 그리고 **JDBC**를 활용해 RESTful 기반의 서버 파이프라인을 구축한 실습 결과물 세트입니다.

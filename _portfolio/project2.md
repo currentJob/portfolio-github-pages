@@ -1,21 +1,11 @@
 ---
-layout: default
+layout: portfolio
 title: "Jekyll Blog & Portfolio UI"
 description: "현재 보고 계시는 반응형 웹 블로그 및 화려한 인터랙티브 포트폴리오 사이트 (currentJob.github.io)"
 tech: ["Jekyll", "HTML5", "CSS3"]
 repo_url: "https://github.com/currentJob/currentJob.github.io"
 order: 2
 ---
-
-<div class="hero" style="min-height: auto; padding: 3rem; margin-bottom: 2rem;">
-    <h1>Personal Blog & Portfolio</h1>
-    <h2>Bento Grid 기반 미니멀리즘 인터랙티브 웹 설계</h2>
-    <div class="tech-stack" style="margin-top: 1rem;">
-        <span class="tech-badge">Jekyll</span>
-        <span class="tech-badge">CSS Animations</span>
-        <span class="tech-badge">Frontend UI/UX</span>
-    </div>
-</div>
 
 ### 📌 프로젝트 개요
 현재 접속해 계신 이 웹사이트(블로그)입니다. 기존의 단순한 사이드바 레이아웃 블로그를 넘어, 최신 트렌드인 **미니멀리즘(Minimalism)**과 **Bento UI Grid**, 그리고 우주를 연상시키는 **홀로그래픽 그라데이션 및 CSS 3D Hover 애니메이션** 기법을 적용하여 화려하게 탈바꿈시킨 프론트엔드 최적화 작업물입니다.

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="portfolio-detail">
+    <div class="hero" style="min-height: auto; padding: 4rem 2rem; margin-bottom: 3rem; text-align: center; background: radial-gradient(circle at center, var(--surface-hover), transparent 70%);">
+        <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 1rem;">{{ page.title }}</h1>
+        <h2 style="font-size: 1.3rem; color: var(--text-muted); font-weight: 400; max-width: 800px; margin: 0 auto;">{{ page.description }}</h2>
+        
+        {% if page.tech %}
+        <div class="tech-stack" style="justify-content: center; margin-top: 2.5rem;">
+            {% for t in page.tech %}
+            <span class="tech-badge" style="font-size: 0.95rem; padding: 0.6rem 1.2rem;">{{ t }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.repo_url %}
+        <div style="margin-top: 3rem;">
+            <a href="{{ page.repo_url }}" class="btn" target="_blank" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+                GitHub 저장소 방문하기
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="portfolio-content" style="background: var(--surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+        {{ content }}
+    </div>
+
+    <!-- Giscus 댓글 섹션 포함 -->
+    {% include comments.html %}
+</article>

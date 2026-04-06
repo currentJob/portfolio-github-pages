@@ -16,6 +16,40 @@ title: Home
     </div>
 </div>
 
+<div id="portfolio" style="margin-bottom: 5rem;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+        🚀 Featured Portfolios
+        <span style="font-size: 1rem; color: var(--text-muted); font-weight: 400; display: block; margin-top: 0.5rem;">
+            가장 자신 있는 프로젝트와 학습 기록들을 살펴보세요.
+        </span>
+    </h2>
+    
+    <div class="bento-grid">
+        {% for project in site.portfolio %}
+        <a href="{{ project.url | relative_url }}" class="bento-card">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            {% if project.tech %}
+            <div class="tech-stack">
+                {% for t in project.tech limit:4 %}
+                <span class="tech-badge">{{ t }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div style="margin-top: 2rem; text-align: right;">
+                <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600;">자세히 보기 &rarr;</span>
+            </div>
+        </a>
+        {% else %}
+        <div class="bento-card">
+            <h3>포트폴리오가 없습니다.</h3>
+            <p>_portfolio 폴더에 md 파일을 추가하여 포트폴리오를 업로드해보세요.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 <div id="about" style="margin-bottom: 4rem;">
     <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">About Me</h2>
     <p style="font-size: 1.1rem; max-width: 800px;">
@@ -25,31 +59,8 @@ title: Home
     <div class="tech-stack" style="margin-top: 1rem;">
         <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">TypeScript</span>
         <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">React / Next.js</span>
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Node.js / Bun</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Python / Django</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Java / Spring</span>
         <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Jekyll</span>
-    </div>
-</div>
-
-<div id="portfolio">
-    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Featured Portfolios</h2>
-    <div class="bento-grid">
-        {% for project in site.portfolio %}
-        <a href="{{ project.url | relative_url }}" class="bento-card">
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.description }}</p>
-            {% if project.tech %}
-            <div class="tech-stack">
-                {% for t in project.tech limit:3 %}
-                <span class="tech-badge">{{ t }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
-        </a>
-        {% else %}
-        <div class="bento-card">
-            <h3>포트폴리오가 없습니다.</h3>
-            <p>_portfolio 폴더에 md 파일을 추가하여 포트폴리오를 업로드해보세요.</p>
-        </div>
-        {% endfor %}
     </div>
 </div>
