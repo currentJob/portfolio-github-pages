@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
 </head>
 <body>
     {% include header.html %}  <!-- 헤더 포함 -->
@@ -21,5 +25,6 @@
     </div>
 
     {% include footer.html %}  <!-- 푸터 포함 -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
