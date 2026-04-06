@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/custom.css">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title | default: site.title }} - Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 </head>
 <body>
     {% include header.html %}  <!-- 헤더 포함 -->
 
-    <div class="content">
+    <div class="content wrapper">
         {% include sidebar.html %}  <!-- 사이드바 포함 -->
-        {{ content }}  <!-- 개별 페이지의 콘텐츠가 여기에 삽입됨 -->
+        
+        <main class="main-body">
+            {{ content }}  <!-- 개별 페이지의 콘텐츠가 여기에 삽입됨 -->
+        </main>
     </div>
 
     {% include footer.html %}  <!-- 푸터 포함 -->
