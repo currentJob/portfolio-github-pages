@@ -7,8 +7,9 @@ title: Home
     <h1 class="text-gradient">Hello, I'm <br>{{ site.github_username | default: 'CurrentJob' }}.</h1>
     <h2>Software Engineer & Content Creator</h2>
     <p>
-        최신 트렌드와 사용자 경험을 최우선으로 설계하는 프론트엔드/풀스택 개발자입니다.<br>
-        문제 해결의 본질을 파고들며, 마이크로 인터랙션과 우아한 코드 구조를 지향합니다.
+        산업 현장의 데이터를 지능형 서비스로 연결하는 4년차 AI 백엔드 엔지니어입니다.<br>
+        다양한 산업용 프로토콜 기반의 실시간 모니터링 시스템 구축에 능숙하며, 이를 AI 모델과 연계한 데이터 처리 파이프라인을 설계하고 구현한 경험이 있습니다.<br>
+        단순한 기능 구현을 넘어, 확장 가능한 아키텍처 설계와 사용자 중심 인터페이스를 통해 실제 운영 환경에서 안정적으로 동작하는 서비스를 만드는 데 집중하고 있습니다.<br>
     </p>
     <div style="display:flex; gap: 1rem; margin-top: 2rem;">
         <a href="#portfolio" class="btn">포트폴리오 보기</a>
@@ -19,15 +20,15 @@ title: Home
 <div id="about" style="margin-bottom: 4rem;">
     <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">About Me</h2>
     <p style="font-size: 1.1rem; max-width: 800px;">
-        빠르게 변화하는 웹 기술 생태계에서 핵심을 놓치지 않으려 노력합니다. React, TS, Next.js 등 모던 웹 스택을 능숙하게 다루며, 
+        빠르게 변화하는 IT 기술 생태계에서 핵심을 놓치지 않으려 노력합니다.
         안정성을 보장하기 위한 아키텍처 설계에 뛰어난 관심을 갖고 있습니다.
     </p>
     <div class="tech-stack" style="margin-top: 1rem;">
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">TypeScript</span>
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">React / Next.js</span>
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Python / Django</span>
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Java / Spring</span>
-        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Jekyll</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Java</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">C#</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Python</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Docker</span>
+        <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Git</span>
     </div>
 </div>
 
