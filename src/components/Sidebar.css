@@ -1,0 +1,128 @@
+.sidebar-container {
+  width: 320px;
+  padding: 2.5rem;
+  position: sticky;
+  top: 6rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: slideRight 0.6s ease-out;
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.profile-section {
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: #10b981;
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-title {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  background: var(--accent-color);
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-container {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+}
