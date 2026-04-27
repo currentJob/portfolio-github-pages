@@ -18,29 +18,29 @@ export const portfolioData = [
   },
   {
     id: 2,
-    title: "Kafka 기반 메시징 시스템",
-    description: "WPF와 장비 통신 계층의 완전한 분리를 위한 고성능 메시지 브로커 연동",
-    tech: ["Kafka", "C#", "BackgroundService", "Generic Host"],
+    title: "메시징 기반 모니터링 시스템",
+    description: "WPF와 장비 통신 계층의 완전한 분리를 통한 실시간 모니터링 연동",
+    tech: ["WPF", "C#", "DI", "Design Patterns"],
     link: "#",
     span: "col-span-1 row-span-1",
     color: "var(--gradient-2)"
   },
-  {
-    id: 3,
-    title: "RTMS.DeviceLib 구축",
-    description: "이기종 장비(Modbus, LeCroy 등) 단일 인터페이스 통합 및 DI 패턴 적용",
-    tech: ["C#", "Design Patterns", "DI"],
-    link: "#",
-    span: "col-span-1 row-span-1",
-    color: "var(--gradient-3)"
-  },
-  {
-    id: 4,
-    title: "데이터 처리 파이프라인",
-    description: "고용량 장비 응답 데이터를 스레드 블로킹 없이 처리하는 비동기 시스템",
-    tech: ["Python", "Docker", "AsyncIO"],
-    link: "#",
-    span: "col-span-2 row-span-1",
-    color: "var(--gradient-4)"
-  }
+  // {
+  //   id: 3,
+  //   title: "RTMS.DeviceLib 구축",
+  //   description: "이기종 장비(Modbus, LeCroy 등) 단일 인터페이스 통합 및 DI 패턴 적용",
+  //   tech: ["C#", "Design Patterns", "DI"],
+  //   link: "#",
+  //   span: "col-span-1 row-span-1",
+  //   color: "var(--gradient-3)"
+  // },
+  // {
+  //   id: 4,
+  //   title: "데이터 처리 파이프라인",
+  //   description: "고용량 장비 응답 데이터를 스레드 블로킹 없이 처리하는 비동기 시스템",
+  //   tech: ["Python", "Docker", "AsyncIO"],
+  //   link: "#",
+  //   span: "col-span-2 row-span-1",
+  //   color: "var(--gradient-4)"
+  // }
 ];
