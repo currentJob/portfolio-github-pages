@@ -5,7 +5,7 @@ title: Home
 
 <div class="hero">
     <h1 class="text-gradient">Hello, I'm <br>{{ site.github_username | default: 'CurrentJob' }}.</h1>
-    <h2>Software Engineer & Content Creator</h2>
+    <h2>AI Backend Engineer</h2>
     <p>
         산업 현장의 데이터를 지능형 서비스로 연결하는 4년차 AI 백엔드 엔지니어입니다.<br>
         다양한 산업용 프로토콜 기반의 실시간 모니터링 시스템 구축에 능숙하며, 이를 AI 모델과 연계한 데이터 처리 파이프라인을 설계하고 구현한 경험이 있습니다.<br>
@@ -20,8 +20,8 @@ title: Home
 <div id="about" style="margin-bottom: 4rem;">
     <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">About Me</h2>
     <p style="font-size: 1.1rem; max-width: 800px;">
-        빠르게 변화하는 IT 기술 생태계에서 핵심을 놓치지 않으려 노력합니다.
-        안정성을 보장하기 위한 아키텍처 설계에 뛰어난 관심을 갖고 있습니다.
+        저는 빠르게 변화하는 IT 기술 생태계에서 핵심을 놓치지 않으려 노력하며,
+        안정성을 보장하기 위한 아키텍처 설계에 관심을 갖고 있습니다.
     </p>
     <div class="tech-stack" style="margin-top: 1rem;">
         <span class="tech-badge" style="font-size:0.85rem; padding: 0.5rem 1rem;">Java</span>
