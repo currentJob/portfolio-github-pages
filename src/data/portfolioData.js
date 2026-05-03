@@ -32,7 +32,7 @@ export const profileData = {
   experience: [
     {
       year: "2021 — Present",
-      role: "AI Backend Engineer / 대리",
+      role: "AI Backend Engineer",
       company: "제조 AI·스마트팩토리 기업",
       desc: "AI 모델 기반 공정 자동화 시스템 설계 및 개발",
     }
