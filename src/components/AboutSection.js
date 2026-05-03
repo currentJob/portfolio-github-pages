@@ -45,7 +45,27 @@ export default function AboutSection() {
               <h3 className="about-card-title"><span className="about-card-icon">🛠</span>Tech Stack</h3>
               <div className="skill-grid">
                 {profileData.techStack.map((t) => (
-                  <div key={t} className="skill-chip"><span className="skill-dot" /><span>{t}</span></div>
+                  <div key={t.name} className="skill-chip-wrapper">
+                    <div className="skill-chip">
+                      <div className="skill-name-row">
+                        <span className="skill-dot" />
+                        <span className="skill-name">{t.name}</span>
+                      </div>
+                      <div className="skill-hover-content">
+                        <div className="skill-level-container">
+                          <div className="skill-level-label mono">{t.level}%</div>
+                          <div className="skill-level-bar-bg">
+                            <div className="skill-level-bar-fill" style={{ width: `${t.level}%` }} />
+                          </div>
+                        </div>
+                        <div className="sub-skill-list">
+                          {t.subSkills.map((sub) => (
+                            <span key={sub} className="sub-skill-tag">{sub}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

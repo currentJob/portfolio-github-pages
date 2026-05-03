@@ -4,7 +4,15 @@ export const profileData = {
   description:
     "산업 현장의 데이터를 지능형 서비스로 연결하는 4년차 AI 백엔드 엔지니어입니다. 다양한 장비와의 통신 프로토콜 구현에 능숙하며, 이를 AI 모델과 연계하여 공정 자동화를 수행하고 있습니다.",
   avatar: "https://avatars.githubusercontent.com/u/78770258?v=4",
-  techStack: ["Java", "C#", "Python", "Docker", "Git", "React", "WPF"],
+  techStack: [
+    { name: "Python", level: 90, subSkills: ["PyTorch", "FastAPI", "Django", "AsyncIO"] },
+    { name: "C#", level: 85, subSkills: ["WPF", "MVVM", "LINQ", ".NET Core"] },
+    { name: "Java", level: 80, subSkills: ["Spring Boot", "JPA", "Gradle"] },
+    { name: "Docker", level: 75, subSkills: ["Compose", "Registry", "CI/CD"] },
+    { name: "Git", level: 85, subSkills: ["GitHub Actions", "Workflow", "Hooks"] },
+    { name: "React", level: 70, subSkills: ["Hooks", "Context API", "Vite"] },
+    { name: "WPF", level: 90, subSkills: ["XAML", "Custom Controls", "Animations"] },
+  ],
   roles: ["Backend Developer", "AI Engineer", "System Architect"],
   experience: [
     {
