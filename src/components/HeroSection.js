@@ -68,9 +68,7 @@ export default function HeroSection() {
           <div className="stat-divider" />
           <div className="stat-item">
             <span className="stat-number">
-              {profileData.techStack.reduce((acc, group) => 
-                acc + group.skills.reduce((sAcc, s) => sAcc + s.subSkills.length, 0), 0
-              )}+
+              {profileData.techStack.reduce((acc, group) => acc + group.skills.length, 0)}+
             </span>
             <span className="stat-label">Tech Stack</span>
           </div>
