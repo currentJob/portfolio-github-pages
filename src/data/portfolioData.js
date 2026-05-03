@@ -8,17 +8,11 @@ export const profileData = {
   roles: ["Backend Developer", "AI Engineer", "System Architect"],
   experience: [
     {
-      year: "2023 — Present",
+      year: "2021 — Present",
       role: "AI Backend Engineer",
-      company: "현직",
+      company: "제조 AI·스마트팩토리 기업",
       desc: "AI 모델 기반 공정 자동화 시스템 설계 및 개발",
-    },
-    {
-      year: "2021 — 2023",
-      role: "Software Engineer",
-      company: "이전 직장",
-      desc: "장비 통신 프로토콜 및 데이터 수집 시스템 구축",
-    },
+    }
   ],
   socials: [
     {
@@ -98,7 +92,7 @@ export const portfolioData = [
     category: "AI/Vision",
     title: "YOLOv8 이미지 세그멘테이션 테스트 플랫폼",
     description:
-      "직접 학습한 YOLOv8 모델로 이미지를 업로드하여 객체 세그멘테이션을 테스트해볼 수 있는 웹 데모 플랫폼",
+      "학습한 YOLOv8 모델로 이미지를 업로드하여 객체 세그멘테이션을 테스트해볼 수 있는 웹 데모 서비스",
     tech: ["YOLOv8", "Python", "React", "Vite"],
     link: "https://currentjob.github.io/yolov8-seg-page",
     span: "featured",

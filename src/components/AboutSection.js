@@ -19,7 +19,7 @@ export default function AboutSection() {
         <div className="section-header fade-in-up">
           <span className="section-label">About Me</span>
           <h2 className="section-title">개발자 소개</h2>
-          <p className="section-subtitle">산업 현장의 복잡한 문제를 기술로 해결합니다.</p>
+          <p className="section-subtitle">데이터를 활용하여 산업 현장의 복잡한 문제를 해결하는 AI Engineer입니다.</p>
         </div>
 
         <div className="about-grid">
