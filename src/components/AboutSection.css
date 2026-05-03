@@ -149,14 +149,32 @@
 }
 
 /* ─── Skill Chips ─── */
-.skill-grid {
+.skill-groups {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-group-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+  border-left: 2px solid var(--accent-color);
+  line-height: 1;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 0.8rem;
 }
 
 .skill-chip-wrapper {
   position: relative;
+  height: auto;
 }
 
 .skill-chip {
@@ -164,16 +182,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   background: var(--bg-primary);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-lg);
-  font-size: 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: default;
   overflow: hidden;
-  min-width: 100px;
+  height: 100%;
+  min-height: 54px;
 }
 
 .skill-chip:hover {
