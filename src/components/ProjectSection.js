@@ -21,38 +21,53 @@ function ProjectCard({ project, index }) {
     <a
       href={project.link}
       ref={cardRef}
-      className={`project-card glass-panel fade-in-scale ${project.span === 'featured' ? 'project-featured' : ''}`}
-      style={{ transitionDelay: `${index * 0.1}s` }}
+      className="project-card glass-panel fade-in-scale"
+      style={{ transitionDelay: `${index * 0.08}s` }}
       onMouseMove={handleMouseMove}
       {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
     >
-      <div className="project-accent-bar" style={{ background: project.accentBar }} />
+      {/* Mouse glow */}
       <div className="project-glow" />
 
-      <div className="project-card-body">
-        <div className="project-card-top">
+      <div className="project-card-inner">
+        {/* Left: icon */}
+        <div className="project-icon-wrap" style={{ '--accent': project.accentBar }}>
           <span className="project-icon">{project.icon}</span>
-          <span className="project-category mono">{project.category}</span>
         </div>
 
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-desc">{project.description}</p>
+        {/* Right: content */}
+        <div className="project-card-content">
+          <div className="project-card-meta">
+            <span className="project-category mono">{project.category}</span>
+            {isExternal && (
+              <span className="project-live-badge mono">
+                <span className="live-dot" />
+                LIVE
+              </span>
+            )}
+          </div>
 
-        <div className="project-tech-row">
-          {project.tech.map((t) => (
-            <span key={t} className="project-tech-tag">{t}</span>
-          ))}
+          <h3 className="project-title">{project.title}</h3>
+          <p className="project-desc">{project.description}</p>
+
+          <div className="project-bottom-row">
+            <div className="project-tech-row">
+              {project.tech.map((t) => (
+                <span key={t} className="project-tech-tag">{t}</span>
+              ))}
+            </div>
+
+            <span className="project-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17l9.2-9.2M17 17V8H8" />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="project-card-footer">
-        <span className="project-link-text">
-          자세히 보기
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M7 17l9.2-9.2M17 17V8H8" />
-          </svg>
-        </span>
-      </div>
+      {/* Accent line at bottom */}
+      <div className="project-accent-line" style={{ background: project.accentBar }} />
     </a>
   );
 }
@@ -67,7 +82,7 @@ export default function ProjectSection() {
           <p className="section-subtitle">가장 자신 있는 프로젝트와 학습 기록들을 살펴보세요.</p>
         </div>
 
-        <div className="project-grid">
+        <div className="project-list">
           {portfolioData.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
