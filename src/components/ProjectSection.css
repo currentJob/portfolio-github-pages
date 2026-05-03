@@ -1,0 +1,198 @@
+/* ============================================
+   Project Section
+   ============================================ */
+
+.project-section {
+  position: relative;
+}
+
+/* ─── Grid Layout ─── */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* ─── Project Card ─── */
+.project-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 50px var(--shadow-lg),
+    0 0 40px var(--accent-glow);
+}
+
+/* Accent Bar */
+.project-accent-bar {
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: height 0.3s ease;
+}
+
+.project-card:hover .project-accent-bar {
+  height: 6px;
+}
+
+/* Mouse Glow */
+.project-glow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--accent-glow) 0%,
+    transparent 70%
+  );
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.project-card:hover .project-glow {
+  opacity: 1;
+}
+
+/* Card Body */
+.project-card-body {
+  padding: 1.75rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.project-icon {
+  font-size: 2rem;
+}
+
+.project-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-color);
+  background: var(--accent-glow);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent-color);
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* Tech Tags */
+.project-tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tech-tag {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--glass-border);
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .project-tech-tag {
+  border-color: var(--accent-glow);
+}
+
+/* Card Footer */
+.project-card-footer {
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+  z-index: 1;
+}
+
+.project-link-text {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-link-text {
+  color: var(--accent-color);
+}
+
+.project-link-text svg {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-link-text svg {
+  transform: translate(3px, -3px);
+}
+
+/* Featured Card */
+.project-featured {
+  grid-column: span 2;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card-body {
+    padding: 1.25rem;
+  }
+
+  .project-card-footer {
+    padding: 0.75rem 1.25rem;
+  }
+}
