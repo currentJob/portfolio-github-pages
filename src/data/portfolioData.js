@@ -92,4 +92,17 @@ export const portfolioData = [
     gradient: "var(--card-gradient-4)",
     accentBar: "#10b981",
   },
+  {
+    id: 5,
+    icon: "🧠",
+    category: "AI/Vision",
+    title: "YOLOv8 이미지 세그멘테이션 테스트 플랫폼",
+    description:
+      "직접 학습한 YOLOv8 모델로 이미지를 업로드하여 객체 세그멘테이션을 테스트해볼 수 있는 웹 데모 플랫폼",
+    tech: ["YOLOv8", "Python", "React", "Vite"],
+    link: "https://currentjob.github.io/yolov8-seg-page",
+    span: "featured",
+    gradient: "var(--card-gradient-5)",
+    accentBar: "#f59e0b",
+  },
 ];

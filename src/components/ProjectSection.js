@@ -15,6 +15,8 @@ function ProjectCard({ project, index }) {
     card.style.setProperty('--mouse-y', `${y}px`);
   }, []);
 
+  const isExternal = project.link.startsWith('http');
+
   return (
     <a
       href={project.link}
@@ -22,6 +24,7 @@ function ProjectCard({ project, index }) {
       className={`project-card glass-panel fade-in-scale ${project.span === 'featured' ? 'project-featured' : ''}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
       onMouseMove={handleMouseMove}
+      {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
     >
       <div className="project-accent-bar" style={{ background: project.accentBar }} />
       <div className="project-glow" />

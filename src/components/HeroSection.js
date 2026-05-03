@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './HeroSection.css';
-import { profileData } from '../data/portfolioData';
+import { profileData, portfolioData } from '../data/portfolioData';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
@@ -72,7 +72,7 @@ export default function HeroSection() {
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number">4</span>
+            <span className="stat-number">{portfolioData.length}</span>
             <span className="stat-label">Projects</span>
           </div>
         </div>
