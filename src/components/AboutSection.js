@@ -1,6 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AboutSection.css';
 import { profileData } from '../data/portfolioData';
+
+function SkillChip({ skill }) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div className="skill-chip-wrapper">
+      <div
+        className={`skill-chip${expanded ? ' expanded' : ''}`}
+        onClick={() => setExpanded((v) => !v)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && setExpanded((v) => !v)}
+      >
+        <div className="skill-name-row">
+          <span className="skill-dot" />
+          <span className="skill-name">{skill.name}</span>
+        </div>
+        <div className="skill-hover-content">
+          <div className="skill-level-container">
+            <div className="skill-level-label mono">{skill.level}%</div>
+            <div className="skill-level-bar-bg">
+              <div className="skill-level-bar-fill" style={{ width: `${skill.level}%` }} />
+            </div>
+          </div>
+          <div className="sub-skill-list">
+            {skill.subSkills.map((sub) => (
+              <span key={sub} className="sub-skill-tag">{sub}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function SocialIcon({ icon }) {
   if (icon === 'github') {
@@ -49,27 +82,7 @@ export default function AboutSection() {
                     <h4 className="skill-group-title mono">{group.category}</h4>
                     <div className="skill-grid">
                       {group.skills.map((t) => (
-                        <div key={t.name} className="skill-chip-wrapper">
-                          <div className="skill-chip">
-                            <div className="skill-name-row">
-                              <span className="skill-dot" />
-                              <span className="skill-name">{t.name}</span>
-                            </div>
-                            <div className="skill-hover-content">
-                              <div className="skill-level-container">
-                                <div className="skill-level-label mono">{t.level}%</div>
-                                <div className="skill-level-bar-bg">
-                                  <div className="skill-level-bar-fill" style={{ width: `${t.level}%` }} />
-                                </div>
-                              </div>
-                              <div className="sub-skill-list">
-                                {t.subSkills.map((sub) => (
-                                  <span key={sub} className="sub-skill-tag">{sub}</span>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <SkillChip key={t.name} skill={t} />
                       ))}
                     </div>
                   </div>
