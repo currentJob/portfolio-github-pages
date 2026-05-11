@@ -189,13 +189,14 @@
   font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: default;
+  cursor: pointer;
   overflow: hidden;
   height: 100%;
   min-height: 54px;
 }
 
-.skill-chip:hover {
+.skill-chip:hover,
+.skill-chip.expanded {
   background: var(--bg-secondary);
   border-color: var(--accent-color);
   transform: translateY(-5px);
@@ -218,7 +219,8 @@
   flex-shrink: 0;
 }
 
-.skill-chip:hover .skill-dot {
+.skill-chip:hover .skill-dot,
+.skill-chip.expanded .skill-dot {
   box-shadow: 0 0 10px var(--accent-color);
   transform: scale(1.2);
 }
@@ -232,7 +234,8 @@
   margin-top: 0;
 }
 
-.skill-chip:hover .skill-hover-content {
+.skill-chip:hover .skill-hover-content,
+.skill-chip.expanded .skill-hover-content {
   max-height: 200px;
   opacity: 1;
   margin-top: 0.8rem;
@@ -267,7 +270,8 @@
   transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
 }
 
-.skill-chip:hover .skill-level-bar-fill {
+.skill-chip:hover .skill-level-bar-fill,
+.skill-chip.expanded .skill-level-bar-fill {
   transform: scaleX(1);
 }
 
@@ -287,7 +291,8 @@
   white-space: nowrap;
 }
 
-.skill-chip:hover .sub-skill-tag {
+.skill-chip:hover .sub-skill-tag,
+.skill-chip.expanded .sub-skill-tag {
   border-color: rgba(99, 102, 241, 0.3);
 }
 
