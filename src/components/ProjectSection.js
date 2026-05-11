@@ -1,9 +1,23 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import './ProjectSection.css';
 import { portfolioData } from '../data/portfolioData';
 
+function useUrlReachable(url) {
+  const [reachable, setReachable] = useState(null);
+
+  useEffect(() => {
+    if (!url || !url.startsWith('http')) return;
+    fetch(url, { method: 'HEAD', cache: 'no-cache' })
+      .then(res => setReachable(res.ok))
+      .catch(() => setReachable(false));
+  }, [url]);
+
+  return reachable;
+}
+
 function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
+  const reachable = useUrlReachable(project.link.startsWith('http') ? project.link : null);
 
   const handleMouseMove = useCallback((e) => {
     const card = cardRef.current;
@@ -39,17 +53,18 @@ function ProjectCard({ project, index }) {
         <div className="project-card-content">
           <div className="project-card-meta">
             <span className="project-category mono">{project.category}</span>
-            {isExternal && project.status === 'maintenance' ? (
+            {isExternal && reachable === false && (
               <span className="project-maintenance-badge mono">
                 <span className="maintenance-dot" />
                 점검중
               </span>
-            ) : isExternal ? (
+            )}
+            {isExternal && reachable === true && (
               <span className="project-live-badge mono">
                 <span className="live-dot" />
                 LIVE
               </span>
-            ) : null}
+            )}
           </div>
 
           <h3 className="project-title">{project.title}</h3>

@@ -113,7 +113,6 @@ export const portfolioData = [
       "학습한 YOLOv8 모델로 이미지를 업로드하여 객체 세그멘테이션을 테스트해볼 수 있는 웹 데모 서비스",
     tech: ["YOLOv8", "Python", "React", "Vite"],
     link: "https://currentjob.github.io/yolov8-seg-page",
-    status: "maintenance",
     span: "featured",
     gradient: "var(--card-gradient-5)",
     accentBar: "#f59e0b",
