@@ -39,12 +39,17 @@ function ProjectCard({ project, index }) {
         <div className="project-card-content">
           <div className="project-card-meta">
             <span className="project-category mono">{project.category}</span>
-            {isExternal && (
+            {isExternal && project.status === 'maintenance' ? (
+              <span className="project-maintenance-badge mono">
+                <span className="maintenance-dot" />
+                점검중
+              </span>
+            ) : isExternal ? (
               <span className="project-live-badge mono">
                 <span className="live-dot" />
                 LIVE
               </span>
-            )}
+            ) : null}
           </div>
 
           <h3 className="project-title">{project.title}</h3>
