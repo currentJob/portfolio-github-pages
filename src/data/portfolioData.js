@@ -117,4 +117,17 @@ export const portfolioData = [
     gradient: "var(--card-gradient-5)",
     accentBar: "#f59e0b",
   },
+  {
+    id: 6,
+    icon: "📄",
+    category: "AI/LLM",
+    title: "이미지 OCR 추출 및 LLM 요약 서비스",
+    description:
+      "이미지에서 한국어 텍스트를 OCR로 추출하고 LLM을 활용해 내용을 자동 요약하는 정적 웹 서비스",
+    tech: ["React", "TypeScript", "Python", "OCR", "LLM", "Vite"],
+    link: "https://currentjob.github.io/ocr-llm-page",
+    span: "",
+    gradient: "var(--card-gradient-1)",
+    accentBar: "#06b6d4",
+  },
 ];
