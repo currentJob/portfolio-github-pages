@@ -25,14 +25,14 @@ export default function AboutSection() {
         <div className="section-header fade-in-up">
           <span className="section-label">About Me</span>
           <h2 className="section-title">개발자 소개</h2>
-          <p className="section-subtitle">데이터를 활용하여 산업 현장의 복잡한 문제를 해결하는 AI Engineer입니다.</p>
+          <p className="section-subtitle">AI 모델을 현장에서 동작하는 서비스로 구현합니다.</p>
         </div>
 
         <div className="about-grid">
           <div className="about-profile-card glass-panel fade-in-left">
             <div className="about-avatar-wrapper">
               <img src={profileData.avatar} alt="Profile" className="about-avatar" />
-              <div className="about-status"><span className="status-dot-sm" /><span>Active</span></div>
+
             </div>
             <h3 className="about-name">{profileData.name}</h3>
             <p className="about-role-text">{profileData.title}</p>
@@ -87,7 +87,7 @@ export default function AboutSection() {
               {profileData.education.map(item => <div className="credential-item" key={item.title}><p className="timeline-year mono">{item.period}</p><p>{item.title}</p></div>)}
               <h3 className="about-card-title">논문 · 특허</h3>
               <ul className="credential-list">{profileData.research.map(item => <li key={item}>{item}</li>)}</ul>
-              <p className="content-date">자료 기준 {profileData.updatedAt}</p>
+
             </div>
           </div>
         </div>

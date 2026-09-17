@@ -32,14 +32,14 @@ test('filters projects and restores the full list without removing demos', () =>
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
 });
 
-test('opens project evidence and preserves the distinction between project and employment dates', () => {
+test('opens and closes project implementation details', () => {
   render(<App />);
   const article = screen.getByRole('article', { name: 'AI 학습 데이터 구축 및 품질 관리' });
   const summary = within(article).getByText('AI 학습 데이터 구축 및 품질 관리 상세 보기');
   fireEvent.click(summary);
   expect(summary.parentElement).toHaveAttribute('open');
-  expect(within(article).getByText(/사업 전체 기간입니다/)).toBeVisible();
-  expect(within(article).getByRole('heading', { name: '검증' })).toBeVisible();
+
+  expect(within(article).getByRole('heading', { name: '검증 방법' })).toBeVisible();
   fireEvent.click(summary);
   expect(summary.parentElement).not.toHaveAttribute('open');
 });

@@ -36,10 +36,10 @@ export default function ProjectSection() {
                   <ul className="case-outcomes">{project.outcomes.map(item => <li key={item}>{item}</li>)}</ul>
                   <details className="case-details">
                     <summary>{project.title} 상세 보기</summary>
-                    {project.periodNote && <p className="case-note">{project.periodNote}</p>}
-                    <h4>문제</h4><p>{project.problem}</p>
-                    <h4>구현</h4><ul>{project.implementation.map(item => <li key={item}>{item}</li>)}</ul>
-                    {project.validation && <><h4>검증</h4><p>{project.validation}</p></>}
+
+                    <h4>해결 과제</h4><p>{project.problem}</p>
+                    <h4>담당 업무</h4><ul>{project.implementation.map(item => <li key={item}>{item}</li>)}</ul>
+                    {project.validation && <><h4>검증 방법</h4><p>{project.validation}</p></>}
                   </details>
                 </div>
               </div>
