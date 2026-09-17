@@ -1,6 +1,18 @@
-# CurrentJob 포트폴리오
+# CurrentJob | AI · Backend Engineer
 
-React 기반 경력·프로젝트 포트폴리오입니다. `react` 브랜치 push 시 GitHub Actions가 GitHub Pages에 배포합니다.
+컴퓨터비전과 백엔드 기술로 제조 현장의 검사·측정·모니터링 시스템을 개발합니다. 장비 통신, AI 모델 구현·서빙, 온프레미스 운영 경험을 소개합니다.
+
+[포트폴리오 보기](https://currentjob.github.io/portfolio-github-pages/)
+
+## 주요 프로젝트
+
+- 비전 기반 치수 측정 및 레이저 마킹 자동화
+- 실시간 통합 진단 모니터링 플랫폼
+- AI 코드리뷰 및 온프레미스 DevOps 자동화
+- 금형 잔여 수명 예측 및 모니터링
+- 차체 프레임 용접 불량 이상 탐지
+- 식품 포장 OCR 인쇄 품질 검사
+- AI 학습 데이터 구축 및 품질 관리
 
 ## 개발 및 검증
 
@@ -11,12 +23,4 @@ npm test -- --watchAll=false
 npm run build
 ```
 
-## 콘텐츠 관리
-
-- `src/data/portfolioData.js`: 프로필, 경력, 교육·연구, 주요 프로젝트 7건, 기타 경력 3건, 개인 데모 2건
-- `src/components/ProjectSection.js`: 분야 필터, 프로젝트별 상세, 개인 데모 링크
-- [콘텐츠 표준 및 원문 대조 기준](docs/content-standard.md)
-
-업무 프로젝트는 기간·역할·문제·구현·검증·성과로 정리합니다. 검증 방법이 원문에 없는 경우 `validation: null`로 두고 화면에 표시하지 않습니다. 원본 이력서와 개인 식별·보상 정보는 공개 저장소에 포함하지 않습니다.
-
-최신 경력 자료 기준일: 2026.08.30. 진행 중 상태는 해당 자료를 기준으로 하며, 미래 종료일은 예정으로 표시합니다.
+프로필과 프로젝트 데이터는 `src/data/portfolioData.js`에서 관리합니다. `react` 브랜치에 push하면 GitHub Actions를 통해 GitHub Pages에 배포됩니다.
