@@ -18,13 +18,13 @@ export const profileData = {
       { name: 'AI Automation', subSkills: ['vLLM', 'Webhook', '자동 코드리뷰'] },
     ] },
   ],
-  experience: [{ year: '2021.11 ~ 재직 중', role: 'AI · Backend Engineer / 대리', company: '제조 AI·스마트팩토리 기업', desc: '정부·국책 과제 8건 이상에서 AI 모델 개발과 서비스 적용, 장비 통신 및 실시간 데이터 처리 시스템을 담당했습니다. 프로젝트에서 검증한 공통 아키텍처를 후속 과제에 재사용하고, 사내 CI/CD와 AI 코드리뷰 자동화를 구축했습니다.' }],
+  experience: [{ year: '2021 ~ 현재', role: 'AI · Backend Engineer', company: '제조 AI·스마트팩토리 기업', desc: '정부·국책 과제 8건 이상에서 AI 모델 개발과 서비스 적용, 장비 통신 및 실시간 데이터 처리 시스템을 담당했습니다. 프로젝트에서 검증한 공통 아키텍처를 후속 과제에 재사용하고, 사내 CI/CD와 AI 코드리뷰 자동화를 구축했습니다.' }],
   education: [
-    { period: '', title: '컴퓨터정보 전공' },
-    { period: '', title: 'Java·Python 기반 빅데이터 개발 교육 수료' },
+    { title: '컴퓨터정보 전공' },
+    { title: 'Java·Python 기반 빅데이터 개발 교육 수료' },
   ],
   research: ['제조 비전 이상 탐지 관련 학술 논문 작성·발표', '제조 AI 검사 기술 관련 특허 출원·등록'],
-  socials: [{ name: 'GitHub', url: 'https://github.com/currentJob', icon: 'github' }, { name: 'Email', url: 'mailto:78770258+currentJob@users.noreply.github.com', icon: 'email' }],
+  socials: [{ name: 'GitHub', url: 'https://github.com/currentJob', icon: 'github' }],
 };
 
 export const portfolioData = [
@@ -36,7 +36,7 @@ export const portfolioData = [
     problem: '다수 제품의 치수를 수작업으로 측정·입력하는 공정에서 처리 시간과 측정 오류를 줄여야 했습니다. 크기가 작은 제품에도 식별 정보를 일정한 위치와 크기로 각인하는 것이 핵심 과제였습니다.',
     implementation: ['제품 경계를 픽셀 단위로 구분하기 위해 YOLOv8-seg를 선택·학습하고 ONNX로 변환해 장비 내 추론 구성', '2D/3D 카메라와 레이저 각인기의 통신 모듈을 개발해 이미지 취득부터 장비 제어까지 연결', '이미지 좌표 → 물리 치수 → 각인기 좌표 변환 및 중앙부 자동 각인'],
     validation: '실측 치수와 산출 치수를 비교하고 좌표 변환 단계별 오차 요인을 점검했습니다.',
-    outcomes: ['제품 치수 측정과 중앙부 레이저 각인을 연결해 수작업 공정 자동화', '공정 자동화'],
+    outcomes: ['제품 치수 측정과 중앙부 레이저 각인을 연결해 수작업 공정 자동화'],
   },
   {
     id: 'industrial-monitoring', category: 'System', icon: '⌁', accentBar: '#6366f1',

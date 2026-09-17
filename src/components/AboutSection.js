@@ -84,7 +84,7 @@ export default function AboutSection() {
             </div>
             <div className="about-timeline-card glass-panel">
               <h3 className="about-card-title">학력 · 교육</h3>
-              {profileData.education.map(item => <div className="credential-item" key={item.title}><p className="timeline-year mono">{item.period}</p><p>{item.title}</p></div>)}
+              {profileData.education.map(item => <div className="credential-item" key={item.title}><p>{item.title}</p></div>)}
               <h3 className="about-card-title">논문 · 특허</h3>
               <ul className="credential-list">{profileData.research.map(item => <li key={item}>{item}</li>)}</ul>
 
