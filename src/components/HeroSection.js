@@ -37,7 +37,7 @@ export default function HeroSection() {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="status-dot" />
-          <span className="mono">Available for work</span>
+          <span className="mono">Industrial AI · Backend</span>
         </div>
 
         <h1 className="hero-title">
@@ -62,20 +62,20 @@ export default function HeroSection() {
 
         <div className="hero-stats">
           <div className="stat-item">
-            <span className="stat-number">4+</span>
-            <span className="stat-label">Years Exp.</span>
+            <span className="stat-number">2021.11</span>
+            <span className="stat-label">경력 시작</span>
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
             <span className="stat-number">
               {profileData.techStack.reduce((acc, group) => acc + group.skills.length, 0)}+
             </span>
-            <span className="stat-label">Tech Stack</span>
+            <span className="stat-label">기술 영역</span>
           </div>
           <div className="stat-divider" />
           <div className="stat-item">
             <span className="stat-number">{portfolioData.length}</span>
-            <span className="stat-label">Projects</span>
+            <span className="stat-label">주요 프로젝트</span>
           </div>
         </div>
       </div>
