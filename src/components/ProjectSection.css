@@ -323,8 +323,6 @@
 .demo-link { display:inline-block; margin-top:20px; color:var(--accent-color); }
 .skill-disclosure .skill-chip { display:list-item; list-style-position:inside; }
 .skill-disclosure[open] .sub-skill-list { padding:12px 0; }
-.credential-item { margin:16px 0 24px; line-height:1.7; }
-.credential-list { padding-left:20px; line-height:1.9; color:var(--text-secondary); }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 :focus-visible { outline:3px solid var(--accent-color); outline-offset:5px; }
 @media (max-width:600px) { .case-study .project-card-inner { padding:22px 16px; gap:12px; } .case-study .project-icon-wrap { display:none; } .case-study .project-title { font-size:1.15rem; } }
@@ -333,3 +331,7 @@
 .skill-grid { align-items:start; }
 .skill-disclosure .skill-chip { height:auto; }
 .skill-disclosure .skill-chip:hover { transform:none; }
+.case-scale { color:var(--text-secondary); font-size:0.85rem; margin-bottom:12px; }
+.technical-strength + .technical-strength { margin-top:24px; }
+.technical-strength h4 { margin-bottom:8px; }
+.technical-strength p { color:var(--text-secondary); line-height:1.8; }

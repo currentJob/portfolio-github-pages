@@ -62,7 +62,7 @@ export default function HeroSection() {
 
         <div className="hero-stats">
           <div className="stat-item">
-            <span className="stat-number">2021</span>
+            <span className="stat-number">2021.11</span>
             <span className="stat-label">경력 시작</span>
           </div>
           <div className="stat-divider" />

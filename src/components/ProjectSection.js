@@ -32,6 +32,7 @@ export default function ProjectSection() {
                   <h3 className="project-title" id={`${project.id}-title`}>{project.title}</h3>
                   <p className="project-desc">{project.description}</p>
                   <p className="case-role">{project.role}</p>
+                  {project.scale && <p className="case-scale">{project.scale}</p>}
                   <Tags items={project.tech} />
                   <ul className="case-outcomes">{project.outcomes.map(item => <li key={item}>{item}</li>)}</ul>
                   <details className="case-details">
