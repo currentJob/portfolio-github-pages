@@ -12,7 +12,7 @@ beforeEach(() => {
 test('renders career, credentials and distinct work and demo sections', () => {
   render(<App />);
   expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('CurrentJob');
-  expect(screen.getByText(/2021.11 ~ 재직 중/)).toBeInTheDocument();
+  expect(screen.getByText(/2021 ~ 현재/)).toBeInTheDocument();
   expect(screen.getByText('컴퓨터정보 전공')).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: '논문 · 특허' })).toBeInTheDocument();
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
