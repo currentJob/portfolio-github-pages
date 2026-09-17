@@ -1,111 +1,64 @@
-import React, { useRef, useCallback, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ProjectSection.css';
-import { portfolioData } from '../data/portfolioData';
+import { portfolioData, additionalProjects, demoProjects } from '../data/portfolioData';
 
-function useUrlReachable(url) {
-  const [reachable, setReachable] = useState(null);
-
-  useEffect(() => {
-    if (!url || !url.startsWith('http')) return;
-    fetch(url, { method: 'HEAD', cache: 'no-cache' })
-      .then(res => setReachable(res.ok))
-      .catch(() => setReachable(false));
-  }, [url]);
-
-  return reachable;
-}
-
-function ProjectCard({ project, index }) {
-  const cardRef = useRef(null);
-  const reachable = useUrlReachable(project.link.startsWith('http') ? project.link : null);
-
-  const handleMouseMove = useCallback((e) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  }, []);
-
-  const isExternal = project.link.startsWith('http');
-
-  return (
-    <a
-      href={project.link}
-      ref={cardRef}
-      className="project-card glass-panel fade-in-scale"
-      style={{ transitionDelay: `${index * 0.08}s` }}
-      onMouseMove={handleMouseMove}
-      {...(isExternal ? { target: '_blank', rel: 'noreferrer' } : {})}
-    >
-      {/* Mouse glow */}
-      <div className="project-glow" />
-
-      <div className="project-card-inner">
-        {/* Left: icon */}
-        <div className="project-icon-wrap" style={{ '--accent': project.accentBar }}>
-          <span className="project-icon">{project.icon}</span>
-        </div>
-
-        {/* Right: content */}
-        <div className="project-card-content">
-          <div className="project-card-meta">
-            <span className="project-category mono">{project.category}</span>
-            {isExternal && reachable === false && (
-              <span className="project-maintenance-badge mono">
-                <span className="maintenance-dot" />
-                점검중
-              </span>
-            )}
-            {isExternal && reachable === true && (
-              <span className="project-live-badge mono">
-                <span className="live-dot" />
-                LIVE
-              </span>
-            )}
-          </div>
-
-          <h3 className="project-title">{project.title}</h3>
-          <p className="project-desc">{project.description}</p>
-
-          <div className="project-bottom-row">
-            <div className="project-tech-row">
-              {project.tech.map((t) => (
-                <span key={t} className="project-tech-tag">{t}</span>
-              ))}
-            </div>
-
-            <span className="project-arrow">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7 17l9.2-9.2M17 17V8H8" />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Accent line at bottom */}
-      <div className="project-accent-line" style={{ background: project.accentBar }} />
-    </a>
-  );
+function Tags({ items }) {
+  return <div className="project-tech-row">{items.map(item => <span key={item} className="project-tech-tag">{item}</span>)}</div>;
 }
 
 export default function ProjectSection() {
+  const [category, setCategory] = useState('전체');
+  const categories = ['전체', ...new Set(portfolioData.map(project => project.category))];
+  const projects = portfolioData.filter(project => category === '전체' || project.category === category);
   return (
     <section className="project-section section" id="portfolio">
       <div className="section-container">
-        <div className="section-header fade-in-up">
-          <span className="section-label">Portfolio</span>
+        <div className="section-header">
+          <span className="section-label">Selected Work</span>
           <h2 className="section-title">프로젝트</h2>
-          <p className="section-subtitle">가장 자신 있는 프로젝트와 학습 기록들을 살펴보세요.</p>
+          <p className="section-subtitle">문제 정의부터 구현·검증까지, 산업 현장에서 수행한 프로젝트입니다.</p>
         </div>
-
+        <div className="project-filters" role="group" aria-label="프로젝트 분야">
+          {categories.map(item => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
+        </div>
+        <p className="project-count" aria-live="polite">주요 프로젝트 {projects.length}건</p>
         <div className="project-list">
-          {portfolioData.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+          {projects.map(project => (
+            <article key={project.id} id={project.id} className="project-card glass-panel case-study" aria-labelledby={`${project.id}-title`}>
+              <div className="project-card-inner">
+                <div className="project-icon-wrap" style={{ '--accent': project.accentBar }}><span className="project-icon" aria-hidden="true">{project.icon}</span></div>
+                <div className="project-card-content">
+                  <div className="project-card-meta"><span className="project-category mono">{project.category}</span><span className="case-period">{project.period}</span></div>
+                  <h3 className="project-title" id={`${project.id}-title`}>{project.title}</h3>
+                  <p className="project-desc">{project.description}</p>
+                  <p className="case-role">{project.role}</p>
+                  <Tags items={project.tech} />
+                  <ul className="case-outcomes">{project.outcomes.map(item => <li key={item}>{item}</li>)}</ul>
+                  <details className="case-details">
+                    <summary>{project.title} 상세 보기</summary>
+                    {project.periodNote && <p className="case-note">{project.periodNote}</p>}
+                    <h4>문제</h4><p>{project.problem}</p>
+                    <h4>구현</h4><ul>{project.implementation.map(item => <li key={item}>{item}</li>)}</ul>
+                    {project.validation && <><h4>검증</h4><p>{project.validation}</p></>}
+                  </details>
+                </div>
+              </div>
+              <div className="project-accent-line" style={{ background: project.accentBar }} />
+            </article>
           ))}
+        </div>
+        <h3 className="portfolio-group-title">기타 수행 프로젝트</h3>
+        <div className="portfolio-secondary-grid">
+          {additionalProjects.map(project => <article className="glass-panel secondary-project" key={project.title}>
+            <p className="case-period">{project.period} · {project.role}</p><h4>{project.title}</h4><p>{project.description}</p>
+          </article>)}
+        </div>
+        <h3 className="portfolio-group-title">개인 데모</h3>
+        <div className="portfolio-secondary-grid">
+          {demoProjects.map(project => <article className="glass-panel secondary-project" key={project.id}>
+            <h4>{project.title}</h4><p>{project.description}</p><Tags items={project.tech} />
+            <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">데모 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
+          </article>)}
         </div>
       </div>
     </section>

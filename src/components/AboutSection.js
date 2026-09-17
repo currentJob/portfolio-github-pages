@@ -1,40 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AboutSection.css';
 import { profileData } from '../data/portfolioData';
 
 function SkillChip({ skill }) {
-  const [expanded, setExpanded] = useState(false);
-  return (
-    <div className="skill-chip-wrapper">
-      <div
-        className={`skill-chip${expanded ? ' expanded' : ''}`}
-        onClick={() => setExpanded((v) => !v)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && setExpanded((v) => !v)}
-      >
-        <div className="skill-name-row">
-          <span className="skill-dot" />
-          <span className="skill-name">{skill.name}</span>
-        </div>
-        <div className="skill-hover-content">
-          <div className="skill-level-container">
-            <div className="skill-level-label mono">{skill.level}%</div>
-            <div className="skill-level-bar-bg">
-              <div className="skill-level-bar-fill" style={{ width: `${skill.level}%` }} />
-            </div>
-          </div>
-          <div className="sub-skill-list">
-            {skill.subSkills.map((sub) => (
-              <span key={sub} className="sub-skill-tag">{sub}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <details className="skill-chip-wrapper skill-disclosure">
+    <summary className="skill-chip"><span className="skill-name">{skill.name}</span></summary>
+    <div className="sub-skill-list">{skill.subSkills.map(sub => <span key={sub} className="sub-skill-tag">{sub}</span>)}</div>
+  </details>;
 }
-
 function SocialIcon({ icon }) {
   if (icon === 'github') {
     return <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>;
@@ -108,6 +81,13 @@ export default function AboutSection() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="about-timeline-card glass-panel">
+              <h3 className="about-card-title">학력 · 교육</h3>
+              {profileData.education.map(item => <div className="credential-item" key={item.title}><p className="timeline-year mono">{item.period}</p><p>{item.title}</p></div>)}
+              <h3 className="about-card-title">논문 · 특허</h3>
+              <ul className="credential-list">{profileData.research.map(item => <li key={item}>{item}</li>)}</ul>
+              <p className="content-date">자료 기준 {profileData.updatedAt}</p>
             </div>
           </div>
         </div>
