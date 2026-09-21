@@ -23,15 +23,14 @@ export default function AboutSection() {
     <section className="about-section section" id="about">
       <div className="section-container">
         <div className="section-header fade-in-up">
-          <span className="section-label">About Me</span>
-          <h2 className="section-title">개발자 소개</h2>
-          <p className="section-subtitle">AI 모델을 현장에서 동작하는 서비스로 구현합니다.</p>
+          <span className="section-label">01 · Profile</span>
+          <h2 className="section-title">모델보다 오래 남는<br />시스템을 만듭니다.</h2>
         </div>
 
         <div className="about-grid">
-          <div className="about-profile-card glass-panel fade-in-left">
+          <aside className="about-profile-card fade-in-left">
             <div className="about-avatar-wrapper">
-              <img src={profileData.avatar} alt="Profile" className="about-avatar" />
+              <img src={profileData.avatar} alt="CurrentJob GitHub 프로필" className="about-avatar" />
 
             </div>
             <h3 className="about-name">{profileData.name}</h3>
@@ -44,11 +43,11 @@ export default function AboutSection() {
                 </a>
               ))}
             </div>
-          </div>
+          </aside>
 
           <div className="about-details">
-            <div className="about-tech-card glass-panel fade-in-right">
-              <h3 className="about-card-title"><span className="about-card-icon">🛠</span>Tech Stack</h3>
+            <div className="about-tech-card fade-in-right">
+              <h3 className="about-card-title">주로 다루는 기술</h3>
               <div className="skill-groups">
                 {profileData.techStack.map((group) => (
                   <div key={group.category} className="skill-group">
@@ -63,8 +62,8 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="about-timeline-card glass-panel fade-in-right" style={{ transitionDelay: '0.15s' }}>
-              <h3 className="about-card-title"><span className="about-card-icon">📋</span>Experience</h3>
+            <div className="about-timeline-card fade-in-right" style={{ transitionDelay: '0.15s' }}>
+              <h3 className="about-card-title">경력</h3>
               <div className="timeline">
                 {profileData.experience.map((exp, i) => (
                   <div key={i} className="timeline-item">
@@ -82,7 +81,7 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-            <div className="about-timeline-card glass-panel">
+            <div className="about-timeline-card">
               <h3 className="about-card-title">핵심 기술 역량</h3>
               {profileData.strengths.map(item => <div className="technical-strength" key={item.title}>
                 <h4>{item.title}</h4><p>{item.description}</p>
