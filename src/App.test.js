@@ -18,6 +18,7 @@ test('renders technical career, outcomes and distinct work and demo sections', (
   expect(screen.getByText('OCR 인식률 83% → 99.7% 개선')).toBeInTheDocument();
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(2);
+  expect(screen.getAllByRole('link', { name: /기술 블로그/ })).toHaveLength(2);
   expect(document.querySelectorAll('a[href="#"]')).toHaveLength(0);
 });
 
