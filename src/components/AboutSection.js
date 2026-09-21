@@ -23,8 +23,8 @@ export default function AboutSection() {
     <section className="about-section section" id="about">
       <div className="section-container">
         <div className="section-header fade-in-up">
-          <span className="section-label">01 · Profile</span>
-          <h2 className="section-title">모델보다 오래 남는<br />시스템을 만듭니다.</h2>
+          <span className="section-label">01 · About</span>
+          <h2 className="section-title">지금까지 해온 일</h2>
         </div>
 
         <div className="about-grid">
@@ -47,7 +47,7 @@ export default function AboutSection() {
 
           <div className="about-details">
             <div className="about-tech-card fade-in-right">
-              <h3 className="about-card-title">주로 다루는 기술</h3>
+              <h3 className="about-card-title">사용해 온 기술</h3>
               <div className="skill-groups">
                 {profileData.techStack.map((group) => (
                   <div key={group.category} className="skill-group">
@@ -82,7 +82,7 @@ export default function AboutSection() {
               </div>
             </div>
             <div className="about-timeline-card">
-              <h3 className="about-card-title">핵심 기술 역량</h3>
+              <h3 className="about-card-title">주로 맡아 온 일</h3>
               {profileData.strengths.map(item => <div className="technical-strength" key={item.title}>
                 <h4>{item.title}</h4><p>{item.description}</p>
               </div>)}
