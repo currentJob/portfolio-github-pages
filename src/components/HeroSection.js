@@ -6,14 +6,14 @@ export default function HeroSection() {
   return (
     <section className="hero-section" id="hero">
       <div className="hero-content">
-        <p className="hero-kicker">산업 AI와 백엔드에 관한 작업 기록 · 2021—현재</p>
+        <p className="hero-kicker">CurrentJob의 개발 기록 · 2021—현재</p>
         <h1 className="hero-title">
-          <span>현장의 데이터를</span>
-          <span>작동하는 소프트웨어로.</span>
+          <span>제조 현장에서</span>
+          <span>AI와 백엔드를 개발합니다.</span>
         </h1>
         <div className="hero-intro">
           <p className="hero-description">{profileData.description}</p>
-          <a href="#portfolio" className="hero-link">프로젝트 기록 읽기 <span aria-hidden="true">↓</span></a>
+          <a href="#portfolio" className="hero-link">프로젝트 살펴보기 <span aria-hidden="true">↓</span></a>
         </div>
         <div className="hero-stats">
           <div className="stat-item">

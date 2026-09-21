@@ -14,9 +14,9 @@ export default function ProjectSection() {
     <section className="project-section section" id="portfolio">
       <div className="section-container">
         <div className="section-header">
-          <span className="section-label">02 · Work notes</span>
-          <h2 className="section-title">현장에서 해결한 문제들</h2>
-          <p className="section-subtitle">문제 정의, 구현, 검증과 결과를 프로젝트별로 기록했습니다.</p>
+          <span className="section-label">02 · Projects</span>
+          <h2 className="section-title">프로젝트 기록</h2>
+          <p className="section-subtitle">맡았던 문제와 구현 과정, 결과를 프로젝트별로 정리했습니다.</p>
         </div>
         <div className="project-filters" role="group" aria-label="프로젝트 분야">
           {categories.map(item => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
@@ -36,24 +36,24 @@ export default function ProjectSection() {
                   <Tags items={project.tech} />
                   <ul className="case-outcomes">{project.outcomes.map(item => <li key={item}>{item}</li>)}</ul>
                   <details className="case-details">
-                    <summary>{project.title} 상세 보기</summary>
+                    <summary>구현 내용 보기<span className="sr-only"> — {project.title}</span></summary>
 
-                    <h4>해결 과제</h4><p>{project.problem}</p>
-                    <h4>담당 업무</h4><ul>{project.implementation.map(item => <li key={item}>{item}</li>)}</ul>
-                    {project.validation && <><h4>검증 방법</h4><p>{project.validation}</p></>}
+                    <h4>배경</h4><p>{project.problem}</p>
+                    <h4>구현</h4><ul>{project.implementation.map(item => <li key={item}>{item}</li>)}</ul>
+                    {project.validation && <><h4>확인한 내용</h4><p>{project.validation}</p></>}
                   </details>
                 </div>
               </div>
             </article>
           ))}
         </div>
-        <h3 className="portfolio-group-title">기타 수행 프로젝트</h3>
+        <h3 className="portfolio-group-title">그 밖의 프로젝트</h3>
         <div className="portfolio-secondary-grid">
           {additionalProjects.map(project => <article className="secondary-project" key={project.title}>
             <p className="case-period">{project.period} · {project.role}</p><h4>{project.title}</h4><p>{project.description}</p>
           </article>)}
         </div>
-        <h3 className="portfolio-group-title">개인 데모</h3>
+        <h3 className="portfolio-group-title">직접 만든 데모</h3>
         <div className="portfolio-secondary-grid">
           {demoProjects.map(project => <article className="secondary-project" key={project.id}>
             <h4>{project.title}</h4><p>{project.description}</p><Tags items={project.tech} />

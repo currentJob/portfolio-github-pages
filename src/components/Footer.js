@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-cta fade-in-up">
           <p className="section-label">03 · Contact</p>
-          <h2 className="footer-heading">다음 문제를 함께<br />풀어볼까요?</h2>
-          <p className="footer-subtext">코드와 최근 작업은 GitHub에 가장 먼저 기록합니다.</p>
+          <h2 className="footer-heading">코드는 GitHub에<br />정리하고 있습니다.</h2>
+          <p className="footer-subtext">개인 프로젝트와 작은 실험은 GitHub에서 확인할 수 있습니다.</p>
           <a href="https://github.com/currentJob" target="_blank" rel="noreferrer" className="footer-cta-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
-            <span>GitHub에서 이어서 보기</span>
+            <span>GitHub 프로필 보기</span>
           </a>
         </div>
 
