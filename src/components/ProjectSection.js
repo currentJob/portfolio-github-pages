@@ -14,19 +14,19 @@ export default function ProjectSection() {
     <section className="project-section section" id="portfolio">
       <div className="section-container">
         <div className="section-header">
-          <span className="section-label">Selected Work</span>
-          <h2 className="section-title">프로젝트</h2>
-          <p className="section-subtitle">문제 정의부터 구현·검증까지, 산업 현장에서 수행한 프로젝트입니다.</p>
+          <span className="section-label">02 · Work notes</span>
+          <h2 className="section-title">현장에서 해결한 문제들</h2>
+          <p className="section-subtitle">문제 정의, 구현, 검증과 결과를 프로젝트별로 기록했습니다.</p>
         </div>
         <div className="project-filters" role="group" aria-label="프로젝트 분야">
           {categories.map(item => <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
         </div>
         <p className="project-count" aria-live="polite">주요 프로젝트 {projects.length}건</p>
         <div className="project-list">
-          {projects.map(project => (
-            <article key={project.id} id={project.id} className="project-card glass-panel case-study" aria-labelledby={`${project.id}-title`}>
+          {projects.map((project, index) => (
+            <article key={project.id} id={project.id} className="project-card case-study" aria-labelledby={`${project.id}-title`}>
               <div className="project-card-inner">
-                <div className="project-icon-wrap" style={{ '--accent': project.accentBar }}><span className="project-icon" aria-hidden="true">{project.icon}</span></div>
+                <div className="project-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</div>
                 <div className="project-card-content">
                   <div className="project-card-meta"><span className="project-category mono">{project.category}</span><span className="case-period">{project.period}</span></div>
                   <h3 className="project-title" id={`${project.id}-title`}>{project.title}</h3>
@@ -44,19 +44,18 @@ export default function ProjectSection() {
                   </details>
                 </div>
               </div>
-              <div className="project-accent-line" style={{ background: project.accentBar }} />
             </article>
           ))}
         </div>
         <h3 className="portfolio-group-title">기타 수행 프로젝트</h3>
         <div className="portfolio-secondary-grid">
-          {additionalProjects.map(project => <article className="glass-panel secondary-project" key={project.title}>
+          {additionalProjects.map(project => <article className="secondary-project" key={project.title}>
             <p className="case-period">{project.period} · {project.role}</p><h4>{project.title}</h4><p>{project.description}</p>
           </article>)}
         </div>
         <h3 className="portfolio-group-title">개인 데모</h3>
         <div className="portfolio-secondary-grid">
-          {demoProjects.map(project => <article className="glass-panel secondary-project" key={project.id}>
+          {demoProjects.map(project => <article className="secondary-project" key={project.id}>
             <h4>{project.title}</h4><p>{project.description}</p><Tags items={project.tech} />
             <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">데모 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
           </article>)}

@@ -6,10 +6,10 @@ import ProjectSection from './components/ProjectSection';
 import Footer from './components/Footer';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
     document.documentElement.setAttribute('data-theme', savedTheme);
   }, []);
@@ -50,8 +50,9 @@ function App() {
 
   return (
     <div className="app-container">
+      <a className="skip-link" href="#main-content">본문으로 바로가기</a>
       <Header theme={theme} toggleTheme={toggleTheme} />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <AboutSection />
         <ProjectSection />

@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 
 const NAV_ITEMS = [
-  { label: 'About', href: '#about' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
+  { label: '소개', href: '#about' },
+  { label: '작업 기록', href: '#portfolio' },
+  { label: '연락', href: '#contact' },
 ];
 
 export default function Header({ theme, toggleTheme }) {
@@ -47,8 +47,8 @@ export default function Header({ theme, toggleTheme }) {
     <header className={`app-header ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-inner">
         <a href="#hero" className="logo-container" onClick={(e) => handleNavClick(e, '#hero')}>
-          <div className="logo-icon">C</div>
-          <span className="logo-text">CurrentJob.</span>
+          <span className="logo-text">currentjob</span>
+          <span className="logo-note">field notes</span>
         </a>
 
         <nav className={`header-nav ${mobileOpen ? 'nav-open' : ''}`}>
@@ -76,6 +76,7 @@ export default function Header({ theme, toggleTheme }) {
           className={`hamburger ${mobileOpen ? 'hamburger-open' : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={mobileOpen}
         >
           <span /><span /><span />
         </button>

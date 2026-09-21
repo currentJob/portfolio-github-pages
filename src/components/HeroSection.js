@@ -1,91 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './HeroSection.css';
 import { profileData, portfolioData } from '../data/portfolioData';
 
 export default function HeroSection() {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    const handleMouseMove = (e) => {
-      const rect = hero.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      hero.style.setProperty('--mouse-x', `${x}%`);
-      hero.style.setProperty('--mouse-y', `${y}%`);
-    };
-
-    hero.addEventListener('mousemove', handleMouseMove);
-    return () => hero.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
-    <section className="hero-section" ref={heroRef} id="hero">
-      {/* Floating particles */}
-      <div className="hero-particles" aria-hidden="true">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className={`particle particle-${i + 1}`} />
-        ))}
-      </div>
-
-      {/* Gradient orbs */}
-      <div className="hero-orb hero-orb-1" aria-hidden="true" />
-      <div className="hero-orb hero-orb-2" aria-hidden="true" />
-
+    <section className="hero-section" id="hero">
       <div className="hero-content">
-        <div className="hero-badge">
-          <span className="status-dot" />
-          <span className="mono">Industrial AI · Backend</span>
-        </div>
-
+        <p className="hero-kicker">산업 AI와 백엔드에 관한 작업 기록 · 2021—현재</p>
         <h1 className="hero-title">
-          <span className="hero-greeting">안녕하세요, 저는</span>
-          <span className="hero-name gradient-text">{profileData.name}</span>
-          <span className="hero-role">{profileData.title}</span>
+          <span>현장의 데이터를</span>
+          <span>작동하는 소프트웨어로.</span>
         </h1>
-
-        <p className="hero-description">{profileData.description}</p>
-
-        <div className="hero-cta">
-          <a href="#portfolio" className="btn-primary">
-            <span>프로젝트 보기</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 17l9.2-9.2M17 17V8H8" />
-            </svg>
-          </a>
-          <a href="#about" className="btn-secondary">
-            <span>더 알아보기</span>
-          </a>
+        <div className="hero-intro">
+          <p className="hero-description">{profileData.description}</p>
+          <a href="#portfolio" className="hero-link">프로젝트 기록 읽기 <span aria-hidden="true">↓</span></a>
         </div>
-
         <div className="hero-stats">
           <div className="stat-item">
             <span className="stat-number">2021.11</span>
-            <span className="stat-label">경력 시작</span>
+            <span className="stat-label">since</span>
           </div>
-          <div className="stat-divider" />
           <div className="stat-item">
-            <span className="stat-number">
-              {profileData.techStack.reduce((acc, group) => acc + group.skills.length, 0)}+
-            </span>
-            <span className="stat-label">기술 영역</span>
+            <span className="stat-number">8+</span>
+            <span className="stat-label">industrial systems</span>
           </div>
-          <div className="stat-divider" />
           <div className="stat-item">
             <span className="stat-number">{portfolioData.length}</span>
-            <span className="stat-label">주요 프로젝트</span>
+            <span className="stat-label">case notes</span>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="scroll-indicator" aria-hidden="true">
-        <div className="scroll-mouse">
-          <div className="scroll-wheel" />
-        </div>
-        <span className="scroll-text mono">scroll</span>
       </div>
     </section>
   );
