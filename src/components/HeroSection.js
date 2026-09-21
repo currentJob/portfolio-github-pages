@@ -13,7 +13,12 @@ export default function HeroSection() {
         </h1>
         <div className="hero-intro">
           <p className="hero-description">{profileData.description}</p>
-          <a href="#portfolio" className="hero-link">프로젝트 살펴보기 <span aria-hidden="true">↓</span></a>
+          <div className="hero-actions">
+            <a href="#portfolio" className="hero-link">프로젝트 살펴보기 <span aria-hidden="true">↓</span></a>
+            <a href="https://currentjob.github.io/devops-pipeline/" className="hero-link hero-blog-link" target="_blank" rel="noreferrer">
+              기술 블로그 읽기 <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
         <div className="hero-stats">
           <div className="stat-item">

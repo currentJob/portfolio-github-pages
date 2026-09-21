@@ -60,17 +60,6 @@ export default function ProjectSection() {
             <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">데모 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
           </article>)}
         </div>
-        <h3 className="portfolio-group-title">기술 블로그</h3>
-        <div className="blog-entry">
-          <div>
-            <p className="case-period">CurrentJob Engineering</p>
-            <h4>실무에서 확인한 기술 변화와 개발 기록</h4>
-          </div>
-          <p>AI, 개발 도구, 클라우드와 보안의 변화를 공식 발표와 1차 출처를 바탕으로 정리합니다.</p>
-          <a className="demo-link" href="https://currentjob.github.io/devops-pipeline/" target="_blank" rel="noreferrer">
-            기술 블로그 읽기 <span className="sr-only">(새 탭)</span> ↗
-          </a>
-        </div>
       </div>
     </section>
   );
