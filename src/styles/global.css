@@ -2,13 +2,13 @@
 
 :root {
   --paper: #f2efe8; --paper-deep: #e9e4da; --ink: #1f211d; --ink-soft: #65675f;
-  --ink-faint: #96978f; --line: #cbc6ba; --accent: #b4492f; --accent-soft: #ead8cf;
+  --ink-faint: #96978f; --line: #cbc6ba; --accent: #347f9b; --accent-soft: #d5e7ed;
   --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
   --serif: 'Noto Serif KR', Georgia, serif; --mono: 'IBM Plex Mono', Consolas, monospace;
 }
 [data-theme="dark"] {
   --paper: #20211e; --paper-deep: #292a26; --ink: #ece9df; --ink-soft: #b7b5ad;
-  --ink-faint: #85857e; --line: #46463f; --accent: #db7658; --accent-soft: #49332c;
+  --ink-faint: #85857e; --line: #46463f; --accent: #78bdd5; --accent-soft: #29444e;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
