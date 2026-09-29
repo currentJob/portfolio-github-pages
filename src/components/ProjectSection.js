@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ProjectSection.css';
-import { portfolioData, additionalProjects, demoProjects } from '../data/portfolioData';
+import { portfolioData, additionalProjects, personalProjects } from '../data/portfolioData';
 
 const BLOG_URL = 'https://currentjob.github.io/devops-pipeline/';
 
@@ -85,11 +85,14 @@ export default function ProjectSection() {
             <p className="case-period">{project.period} · {project.role}</p><h4>{project.title}</h4><p>{project.description}</p>
           </article>)}
         </div>
-        <h3 className="portfolio-group-title">개인적으로 만든 데모</h3>
+        <h3 className="portfolio-group-title">개인 프로젝트</h3>
         <div className="portfolio-secondary-grid">
-          {demoProjects.map(project => <article className="secondary-project" key={project.id}>
+          {personalProjects.map(project => <article className="secondary-project" key={project.id}>
             <h4>{project.title}</h4><p>{project.description}</p><Tags items={project.tech} />
-            <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">데모 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
+            <div className="project-links">
+              <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">사이트 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
+              <a className="demo-link" href={project.source} target="_blank" rel="noreferrer">소스 보기 <span className="sr-only">— {project.title} GitHub 저장소 (새 탭)</span> ↗</a>
+            </div>
           </article>)}
         </div>
         <BlogPosts />

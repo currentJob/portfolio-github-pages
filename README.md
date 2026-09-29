@@ -14,6 +14,12 @@
 - 식품 포장 OCR 인쇄 품질 검사
 - AI 학습 데이터 구축 및 품질 관리
 
+## 개인 프로젝트
+
+- [YOLOv8 세그멘테이션](https://currentjob.github.io/yolov8-seg-page) · [소스](https://github.com/currentJob/yolov8-seg-page)
+- [OCR · LLM 요약](https://currentjob.github.io/ocr-llm-page) · [소스](https://github.com/currentJob/ocr-llm-page)
+- [도시 여행 일정 플래너](https://currentjob.github.io/city-walk-planner) · [소스](https://github.com/currentJob/city-walk-planner)
+
 ## 개발 및 검증
 
 ```sh

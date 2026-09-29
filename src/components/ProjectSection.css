@@ -35,6 +35,8 @@
 .secondary-project h4 { margin: .6rem 0 .8rem; font-family: var(--serif); font-size: 1.08rem; font-weight: 600; }
 .secondary-project p { font-size: .82rem; line-height: 1.75; }
 .demo-link { display: inline-block; margin-top: 1.5rem; padding-bottom: .15rem; border-bottom: 1px solid var(--ink); font-size: .76rem; text-decoration: none; }
+.project-links { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1.5rem; }
+.project-links .demo-link { margin-top: 0; }
 .demo-link:hover { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 760px) {
   .project-card-inner { grid-template-columns: 40px minmax(0, 1fr); gap: .5rem; padding: 2.5rem 0; }
