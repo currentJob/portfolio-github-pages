@@ -121,4 +121,5 @@ export const additionalProjects = [
 export const demoProjects = [
   { id: 'yolo-demo', title: 'YOLOv8 세그멘테이션 데모', description: '이미지를 올리면 YOLOv8 모델이 찾은 객체 영역을 브라우저에서 확인할 수 있습니다. COCO 80개 클래스 기준 YOLOv8n·m-seg 모델을 FP16/FP32 ONNX로 변환해 Web Worker에서 실행하고, WebGPU를 지원하지 않는 환경에서는 WASM으로 전환합니다.', tech: ['YOLOv8-seg', 'ONNX Runtime Web', 'WebGPU', 'React', 'Vite'], link: 'https://currentjob.github.io/yolov8-seg-page' },
   { id: 'ocr-demo', title: 'OCR · LLM 요약 데모', description: '이미지에서 한국어 문장을 읽고, 추출한 내용을 LLM으로 요약합니다. 글자 인식은 PP-OCRv5 한국어 모델로 하고, 요약은 Qwen2.5-0.5B-Instruct를 Transformers.js로 브라우저에서 돌립니다. 서버 없이 동작하며 첫 실행 때 모델 파일을 약 350MB 받습니다.', tech: ['PP-OCRv5', 'Qwen2.5-0.5B', 'Transformers.js', 'React', 'TypeScript'], link: 'https://currentjob.github.io/ocr-llm-page' },
+  { id: 'city-walk-demo', title: '도시 여행 일정 플래너 데모', description: '도시와 날짜를 고르면 영업시간과 이동 거리를 고려해 날짜별 동선을 짜고 지도에 표시합니다. 주변 맛집 검색과 홍콩·마카오 트렌드 코스를 제공하고, 초대코드로 동행과 일정·경비를 함께 편집할 수 있습니다. 백엔드는 FastAPI 앱을 Cloudflare Workers와 Durable Object(SQLite)에서 실행합니다.', tech: ['FastAPI', 'Cloudflare Workers', 'SQLite', 'Leaflet', 'JavaScript'], link: 'https://currentjob.github.io/city-walk-planner' },
 ];

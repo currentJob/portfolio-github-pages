@@ -25,7 +25,7 @@ test('renders technical career, outcomes and distinct work and demo sections', (
   expect(screen.getByRole('heading', { name: '주로 하는 일' })).toBeInTheDocument();
   expect(screen.getByText('OCR 인식률 83% → 99.7% 개선')).toBeInTheDocument();
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
-  expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(2);
+  expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(3);
   expect(screen.getAllByRole('link', { name: /기술 블로그/ })).toHaveLength(2);
   expect(document.querySelectorAll('a[href="#"]')).toHaveLength(0);
 });
@@ -37,7 +37,7 @@ test('filters projects and restores the full list without removing demos', () =>
   expect(screen.getByText('주요 프로젝트 1건')).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'AI 코드리뷰 및 온프레미스 DevOps 자동화' })).toBeInTheDocument();
   expect(screen.queryByRole('heading', { name: '금형 잔여 수명 예측 및 모니터링' })).not.toBeInTheDocument();
-  expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(2);
+  expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(3);
   fireEvent.click(screen.getByRole('button', { name: '전체' }));
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
 });
