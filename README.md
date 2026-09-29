@@ -19,6 +19,7 @@
 - [YOLOv8 세그멘테이션](https://currentjob.github.io/yolov8-seg-page) · [소스](https://github.com/currentJob/yolov8-seg-page)
 - [OCR · LLM 요약](https://currentjob.github.io/ocr-llm-page) · [소스](https://github.com/currentJob/ocr-llm-page)
 - [도시 여행 일정 플래너](https://currentjob.github.io/city-walk-planner) · [소스](https://github.com/currentJob/city-walk-planner)
+- [로컬 AI 코드리뷰](https://currentjob.github.io/local-code-review) · [소스](https://github.com/currentJob/local-code-review)
 
 ## 개발 및 검증
 
