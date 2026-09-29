@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "CurrentJob",
+  "name": "CurrentJob 포트폴리오",
   "icons": [
     {
       "src": "favicon.ico",

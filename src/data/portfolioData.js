@@ -1,6 +1,6 @@
 export const profileData = {
   name: 'CurrentJob', title: 'AI · Backend Engineer',
-  description: '제조 현장에서 사용하는 검사·측정·모니터링 시스템을 개발해 왔습니다. 카메라와 계측 장비에서 데이터를 받아 AI 모델로 처리하고, API나 데스크톱 프로그램으로 연결하는 일을 주로 합니다.',
+  description: '공장에서 쓰는 검사·측정·모니터링 프로그램을 만들고 있습니다. 카메라나 계측 장비에서 데이터를 받아 모델을 돌리고, 그 결과를 API나 PC 프로그램으로 넘겨주는 부분을 주로 맡고 있습니다.',
   avatar: 'https://avatars.githubusercontent.com/u/78770258?v=4',
   roles: ['AI Engineer', 'Backend Developer', 'System Architect'],
   techStack: [

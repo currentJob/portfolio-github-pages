@@ -11,10 +11,10 @@ beforeEach(() => {
 
 test('renders technical career, outcomes and distinct work and demo sections', () => {
   render(<App />);
-  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('제조 현장에서AI와 백엔드를 개발합니다.');
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('안녕하세요,제조 분야 개발자 CurrentJob입니다.');
   expect(screen.getByText(/2021.11 ~ 재직 중/)).toBeInTheDocument();
   expect(screen.getByText('에프원소프트㈜ · AI융합본부')).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: '주로 맡아 온 일' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: '주로 하는 일' })).toBeInTheDocument();
   expect(screen.getByText('OCR 인식률 83% → 99.7% 개선')).toBeInTheDocument();
   expect(screen.getByText('주요 프로젝트 7건')).toBeInTheDocument();
   expect(screen.getAllByRole('link', { name: /데모 열기/ })).toHaveLength(2);

@@ -1,6 +1,6 @@
 # CurrentJob | AI · Backend Engineer
 
-컴퓨터비전과 백엔드 기술로 제조 현장의 검사·측정·모니터링 시스템을 개발합니다. 장비 통신, AI 모델 구현·서빙, 온프레미스 운영 경험을 소개합니다.
+제 포트폴리오 사이트 소스입니다. 회사에서 제조 현장용 검사·측정·모니터링 시스템을 개발하면서 진행한 프로젝트들을 정리해 두었습니다.
 
 [포트폴리오 보기](https://currentjob.github.io/portfolio-github-pages/)
 
