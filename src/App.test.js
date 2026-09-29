@@ -1,5 +1,13 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
+import { latestPosts } from './components/ProjectSection';
+
+test('picks the 3 newest dated blog posts and skips life posts', () => {
+  const index = Object.fromEntries([
+    'index', '라이프/메뉴-—-2026-09-30', '트렌드/a-2026-06-15', 'CS기초/b-2026-09-22', '트렌드/c-2026-09-16', '트렌드/d-2026-09-17',
+  ].map(slug => [slug, { slug, title: slug }]));
+  expect(latestPosts(index).map(p => p.date)).toEqual(['2026-09-22', '2026-09-17', '2026-09-16']);
+});
 
 beforeEach(() => {
   localStorage.clear();

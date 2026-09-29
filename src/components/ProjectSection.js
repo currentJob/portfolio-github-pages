@@ -1,6 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProjectSection.css';
 import { portfolioData, additionalProjects, demoProjects } from '../data/portfolioData';
+
+const BLOG_URL = 'https://currentjob.github.io/devops-pipeline/';
+
+// 블로그(Quartz) 글 목록. 날짜는 slug에 있는 YYYY-MM-DD를 쓰고, 라이프 글은 뺀다.
+export function latestPosts(index, count = 3) {
+  return Object.values(index)
+    .map(post => ({ ...post, date: (post.slug.match(/\d{4}-\d{2}-\d{2}/) || [])[0] }))
+    .filter(post => post.date && !post.slug.startsWith('라이프/'))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, count);
+}
+
+function BlogPosts() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    if (typeof fetch !== 'function') return;
+    fetch(`${BLOG_URL}static/contentIndex.json`)
+      .then(res => (res.ok ? res.json() : {}))
+      .then(index => setPosts(latestPosts(index)))
+      .catch(() => {});
+  }, []);
+  if (!posts.length) return null;
+  return <>
+    <h3 className="portfolio-group-title">최근 블로그 글</h3>
+    <div className="portfolio-secondary-grid">
+      {posts.map(post => <article className="secondary-project" key={post.slug}>
+        <p className="case-period">{post.date}</p>
+        <h4><a href={BLOG_URL + encodeURI(post.slug)} target="_blank" rel="noreferrer">{post.title}</a></h4>
+      </article>)}
+    </div>
+  </>;
+}
 
 function Tags({ items }) {
   return <div className="project-tech-row">{items.map(item => <span key={item} className="project-tech-tag">{item}</span>)}</div>;
@@ -60,6 +92,7 @@ export default function ProjectSection() {
             <a className="demo-link" href={project.link} target="_blank" rel="noreferrer">데모 열기 <span className="sr-only">— {project.title} (새 탭)</span> ↗</a>
           </article>)}
         </div>
+        <BlogPosts />
       </div>
     </section>
   );

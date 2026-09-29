@@ -1,22 +1,13 @@
-.site-footer { padding: 8rem 0 2.5rem; background: var(--ink); color: var(--paper); }
+.site-footer { padding: 2.5rem 0; background: var(--ink); color: var(--paper); }
 .footer-container { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
-.site-footer .section-label { color: var(--accent); }
-.footer-cta { display: grid; grid-template-columns: 1fr 1fr; align-items: end; column-gap: 4rem; padding-bottom: 7rem; }
-.footer-cta .section-label { grid-column: 1 / -1; }
-.footer-heading { color: var(--paper); font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -.06em; }
-.footer-subtext { align-self: start; max-width: 380px; color: color-mix(in srgb, var(--paper) 65%, transparent); }
-.footer-cta-btn { grid-column: 2; justify-self: start; display: inline-flex; align-items: center; gap: .7rem; margin-top: -2.7rem; padding-bottom: .3rem; border-bottom: 1px solid var(--paper); color: var(--paper); font-size: .85rem; text-decoration: none; }
-.footer-cta-btn:hover { color: var(--accent); border-color: var(--accent); }
-.footer-divider { height: 1px; background: color-mix(in srgb, var(--paper) 20%, transparent); }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .footer-logo-text { font-family: var(--serif); font-size: .9rem; }
 .footer-copyright { color: color-mix(in srgb, var(--paper) 45%, transparent); font-size: .62rem; }
+.footer-links { display: flex; align-items: center; gap: .5rem; }
+.footer-links .footer-mail { width: auto; font-size: .8rem; text-decoration: none; }
 .footer-links a { display: grid; place-items: center; width: 36px; height: 36px; color: var(--paper); }
 .footer-links a:hover { color: var(--accent); }
 @media (max-width: 700px) {
-  .site-footer { padding-top: 5.5rem; }
   .footer-container { width: calc(100% - 2rem); }
-  .footer-cta { grid-template-columns: 1fr; gap: 1.5rem; padding-bottom: 5rem; }
-  .footer-cta-btn { grid-column: 1; margin-top: 0; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
 }

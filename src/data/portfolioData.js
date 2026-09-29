@@ -33,7 +33,10 @@ export const profileData = {
     { title: '데이터 가공과 검수', description: '200만 건 이상의 메타데이터와 4.5TB 데이터셋을 가공하고 검수하는 파이프라인을 운영했습니다.' },
     { title: '개발 환경 정리와 자동화', description: '온프레미스 GitLab CI/CD와 vLLM 코드리뷰를 도입했고, 레거시 모듈을 정리해 코드량을 30% 이상 줄였습니다.' },
   ],
-  socials: [{ name: 'GitHub', url: 'https://github.com/currentJob', icon: 'github' }],
+  socials: [
+    { name: 'GitHub', url: 'https://github.com/currentJob', icon: 'github' },
+    { name: 'Email', url: 'mailto:an8957@gmail.com', icon: 'mail' },
+  ],
 };
 
 export const portfolioData = [
@@ -116,6 +119,6 @@ export const additionalProjects = [
   { title: '스마트 챔버 모니터링', period: '2024.01 ~ 2024.02', role: 'PL', description: 'RS-485·Modbus RTU 센서 데이터를 수집해 실시간 상태와 알림을 보여주는 프로그램을 설계했습니다.' },
 ];
 export const demoProjects = [
-  { id: 'yolo-demo', title: 'YOLOv8 세그멘테이션 데모', description: '이미지를 올리면 YOLOv8 모델이 찾은 객체 영역을 브라우저에서 확인할 수 있습니다.', tech: ['YOLOv8', 'Python', 'React', 'Vite'], link: 'https://currentjob.github.io/yolov8-seg-page' },
-  { id: 'ocr-demo', title: 'OCR · LLM 요약 데모', description: '이미지에서 한국어 문장을 읽고, 추출한 내용을 LLM으로 요약합니다.', tech: ['React', 'TypeScript', 'OCR', 'LLM'], link: 'https://currentjob.github.io/ocr-llm-page' },
+  { id: 'yolo-demo', title: 'YOLOv8 세그멘테이션 데모', description: '이미지를 올리면 YOLOv8 모델이 찾은 객체 영역을 브라우저에서 확인할 수 있습니다. COCO 80개 클래스 기준 YOLOv8n·m-seg 모델을 FP16/FP32 ONNX로 변환해 Web Worker에서 실행하고, WebGPU를 지원하지 않는 환경에서는 WASM으로 전환합니다.', tech: ['YOLOv8-seg', 'ONNX Runtime Web', 'WebGPU', 'React', 'Vite'], link: 'https://currentjob.github.io/yolov8-seg-page' },
+  { id: 'ocr-demo', title: 'OCR · LLM 요약 데모', description: '이미지에서 한국어 문장을 읽고, 추출한 내용을 LLM으로 요약합니다. 글자 인식은 PP-OCRv5 한국어 모델로 하고, 요약은 Qwen2.5-0.5B-Instruct를 Transformers.js로 브라우저에서 돌립니다. 서버 없이 동작하며 첫 실행 때 모델 파일을 약 350MB 받습니다.', tech: ['PP-OCRv5', 'Qwen2.5-0.5B', 'Transformers.js', 'React', 'TypeScript'], link: 'https://currentjob.github.io/ocr-llm-page' },
 ];

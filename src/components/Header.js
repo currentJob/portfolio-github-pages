@@ -4,7 +4,6 @@ import './Header.css';
 const NAV_ITEMS = [
   { label: '소개', href: '#about' },
   { label: '작업 기록', href: '#portfolio' },
-  { label: '연락', href: '#contact' },
 ];
 
 export default function Header({ theme, toggleTheme }) {
@@ -20,7 +19,7 @@ export default function Header({ theme, toggleTheme }) {
 
   // Track active section via IntersectionObserver
   useEffect(() => {
-    const ids = ['about', 'portfolio', 'contact'];
+    const ids = ['about', 'portfolio'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
