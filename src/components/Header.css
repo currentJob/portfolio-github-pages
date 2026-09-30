@@ -4,12 +4,13 @@
 .logo-container { display: flex; align-items: baseline; gap: .65rem; text-decoration: none; }
 .logo-text { font-family: var(--brand); font-size: 1.05rem; font-weight: 700; letter-spacing: -.03em; }
 .logo-note { color: var(--ink-faint); font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
-.header-nav { display: flex; align-items: center; gap: 1.8rem; }
+.header-nav { display: flex; align-items: center; gap: 1.8rem; margin-left: auto; }
 .nav-link { position: relative; color: var(--ink-soft); font-size: .82rem; text-decoration: none; transition: color .2s ease; }
 .nav-link::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -.35rem; height: 1px; background: var(--accent); transition: right .2s ease; }
 .nav-link:hover, .nav-active { color: var(--ink); }
 .nav-link:hover::after, .nav-active::after { right: 0; }
-.theme-toggle-btn { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-left: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+.header-controls { display: flex; align-items: center; gap: .6rem; margin-left: 1.8rem; padding-left: 1.2rem; border-left: 1px solid var(--line); --cj-ctl: 34px; }
+.theme-toggle-btn { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
 .theme-toggle-btn:hover { color: var(--accent); }
 .hamburger { display: none; width: 36px; border: 0; background: transparent; cursor: pointer; }
 .hamburger span { display: block; width: 24px; height: 1px; margin: 6px auto; background: var(--ink); transition: transform .2s ease, opacity .2s ease; }
@@ -22,5 +23,7 @@
   .header-nav { position: fixed; inset: 0; padding: 7rem 2rem; background: var(--paper); flex-direction: column; align-items: flex-start; gap: 2rem; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility .2s ease; }
   .header-nav.nav-open { opacity: 1; visibility: visible; pointer-events: auto; }
   .nav-link { font-family: var(--serif); font-size: 2rem; }
-  .theme-toggle-btn { border: 1px solid var(--line); }
+  .header-controls { margin-left: auto; margin-right: .5rem; padding-left: 0; border-left: 0; --cj-ctl: 40px; position: relative; z-index: 2; }
+  .theme-toggle-btn { width: 40px; height: 40px; }
+  .hamburger { width: 44px; height: 44px; }
 }

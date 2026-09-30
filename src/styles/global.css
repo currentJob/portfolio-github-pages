@@ -1,7 +1,9 @@
 /* 다른 프로젝트 사이트와 같은 디자인 토큰(기준: city-walk-planner). 밝은/어두운 테마. */
 :root {
   --paper: #f5f7f4; --paper-deep: #edf1ec; --ink: #203d34; --ink-soft: #626f68;
-  --ink-faint: #86928b; --line: #dbe1db; --accent: #245548; --accent-soft: #e3ece3;
+  --ink-faint: #86928b; --line: #dbe1db;
+  --accent: var(--cj-accent); --accent-soft: color-mix(in srgb, var(--cj-accent) 14%, var(--paper));
+  --cj-surface: var(--paper); --cj-line: var(--line); --cj-ink: var(--ink); --cj-shadow: 0 10px 30px #203d3426;
   --sans: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
   /* 제목은 굵은 고딕(city-walk 와 같음). 명조는 로고 워드마크(--brand)에만 쓴다. */
   --serif: var(--sans); --brand: Georgia, 'Noto Serif KR', serif; --mono: var(--sans);
@@ -9,9 +11,18 @@
 }
 [data-theme="dark"] {
   --paper: #111714; --paper-deep: #1f2924; --ink: #e3ebe6; --ink-soft: #9aaca3;
-  --ink-faint: #74857c; --line: #2e3b34; --accent: #7cc4a6; --accent-soft: #1f3a30;
+  --ink-faint: #74857c; --line: #2e3b34; --cj-surface: #18201c; --cj-shadow: 0 10px 30px #0008;
   color-scheme: dark;
 }
+/* Accent palettes, shared by every currentjob project site. Chosen in the header/bar and saved as localStorage "accent".
+   Checked contrast (WCAG): accent as text on page/card/tint backgrounds >= 5.3:1, text on accent buttons >= 6.0:1, in both themes. */
+:root{--cj-accent:#245548;--cj-on-accent:#fff}
+:root[data-theme=dark]{--cj-accent:#7cc4a6;--cj-on-accent:#0e1a14}
+:root[data-accent=sky]{--cj-accent:#0b5f8a}:root[data-theme=dark][data-accent=sky]{--cj-accent:#7cc6ee;--cj-on-accent:#06202e}
+:root[data-accent=yellow]{--cj-accent:#7a5600}:root[data-theme=dark][data-accent=yellow]{--cj-accent:#f0c75e;--cj-on-accent:#261c00}
+:root[data-accent=purple]{--cj-accent:#5f3bab}:root[data-theme=dark][data-accent=purple]{--cj-accent:#b9a3f5;--cj-on-accent:#1c1233}
+:root[data-accent=orange]{--cj-accent:#a8431b}:root[data-theme=dark][data-accent=orange]{--cj-accent:#f4a27c;--cj-on-accent:#2c1206}
+:root[data-accent=rose]{--cj-accent:#a82d5c}:root[data-theme=dark][data-accent=rose]{--cj-accent:#f39bbd;--cj-on-accent:#2e0c1a}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
 body {
@@ -49,3 +60,13 @@ p { color: var(--ink-soft); text-wrap: pretty; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale { opacity: 1 !important; transform: none !important; }
 }
+
+/* 강조 색상 선택(헤더) — 다른 프로젝트 사이트와 같은 모양 */
+.cj-accent{position:relative;display:inline-block}
+.cj-accent>summary{list-style:none;display:inline-grid;place-items:center;width:var(--cj-ctl,26px);height:var(--cj-ctl,26px);border:1px solid var(--cj-line);border-radius:999px;background:var(--cj-surface);cursor:pointer}
+.cj-accent>summary::-webkit-details-marker{display:none}
+.cj-dot{width:12px;height:12px;border-radius:50%;background:var(--cj-accent)}
+.cj-swatches{position:absolute;right:0;top:calc(100% + 8px);z-index:3000;display:grid;grid-template-columns:repeat(3,34px);gap:10px;padding:12px;background:var(--cj-surface);border:1px solid var(--cj-line);border-radius:12px;box-shadow:var(--cj-shadow)}
+.cj-swatches button{width:34px;height:34px;min-height:0;margin:0;padding:0;border:3px solid var(--cj-surface);border-radius:50%;outline:1px solid var(--cj-line);background:var(--l);box-shadow:none;cursor:pointer}
+:root[data-theme=dark] .cj-swatches button{background:var(--d)}
+.cj-swatches button[aria-pressed=true]{outline:2px solid var(--cj-ink)}
