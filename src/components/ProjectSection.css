@@ -7,7 +7,7 @@
 .project-list { border-top: 1px solid var(--ink); }
 .project-card { scroll-margin-top: 6rem; border-bottom: 1px solid var(--line); }
 .project-card-inner { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 1.5rem; padding: 3rem 0 3.5rem; }
-.project-index { color: var(--accent); font-family: var(--serif); font-size: 1.35rem; font-style: italic; }
+.project-index { color: var(--accent); font-family: var(--brand); font-size: 1.35rem; }
 .project-card-content { min-width: 0; }
 .project-card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-bottom: 1rem; }
 .project-category { color: var(--accent); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }

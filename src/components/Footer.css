@@ -1,7 +1,7 @@
 .site-footer { padding: 2.5rem 0; background: var(--ink); color: var(--paper); }
 .footer-container { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.footer-logo-text { font-family: var(--serif); font-size: .9rem; }
+.footer-logo-text { font-family: var(--brand); font-size: .9rem; }
 .footer-copyright { color: color-mix(in srgb, var(--paper) 45%, transparent); font-size: .62rem; }
 .footer-links { display: flex; align-items: center; gap: .5rem; }
 .footer-links .footer-mail { width: auto; font-size: .8rem; text-decoration: none; }

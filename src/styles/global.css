@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap');
-
+/* 다른 프로젝트 사이트와 같은 디자인 토큰(기준: city-walk-planner). 밝은/어두운 테마. */
 :root {
-  --paper: #f2efe8; --paper-deep: #e9e4da; --ink: #1f211d; --ink-soft: #65675f;
-  --ink-faint: #96978f; --line: #cbc6ba; --accent: #347f9b; --accent-soft: #d5e7ed;
-  --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-  --serif: 'Noto Serif KR', Georgia, serif; --mono: 'IBM Plex Mono', Consolas, monospace;
+  --paper: #f5f7f4; --paper-deep: #edf1ec; --ink: #203d34; --ink-soft: #626f68;
+  --ink-faint: #86928b; --line: #dbe1db; --accent: #245548; --accent-soft: #e3ece3;
+  --sans: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  /* 제목은 굵은 고딕(city-walk 와 같음). 명조는 로고 워드마크(--brand)에만 쓴다. */
+  --serif: var(--sans); --brand: Georgia, 'Noto Serif KR', serif; --mono: var(--sans);
+  color-scheme: light;
 }
 [data-theme="dark"] {
-  --paper: #20211e; --paper-deep: #292a26; --ink: #ece9df; --ink-soft: #b7b5ad;
-  --ink-faint: #85857e; --line: #46463f; --accent: #78bdd5; --accent-soft: #29444e;
+  --paper: #111714; --paper-deep: #1f2924; --ink: #e3ebe6; --ink-soft: #9aaca3;
+  --ink-faint: #74857c; --line: #2e3b34; --accent: #7cc4a6; --accent-soft: #1f3a30;
+  color-scheme: dark;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
@@ -17,12 +19,8 @@ body {
   font-family: var(--sans); line-height: 1.75; word-break: keep-all;
   transition: background-color .25s ease, color .25s ease;
 }
-body::before {
-  content: ''; position: fixed; inset: 0; z-index: -1; opacity: .22; pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");
-}
 a { color: inherit; } button { font: inherit; }
-h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; }
+h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; font-weight: 700; letter-spacing: -.035em; }
 p { color: var(--ink-soft); text-wrap: pretty; }
 .mono { font-family: var(--mono); }
 .app-container { min-height: 100vh; }

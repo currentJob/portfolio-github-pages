@@ -2,7 +2,7 @@
 .header-scrolled { background: color-mix(in srgb, var(--paper) 92%, transparent); border-color: var(--line); backdrop-filter: blur(12px); }
 .header-inner { width: min(1120px, calc(100% - 3rem)); height: 72px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .logo-container { display: flex; align-items: baseline; gap: .65rem; text-decoration: none; }
-.logo-text { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; letter-spacing: -.03em; }
+.logo-text { font-family: var(--brand); font-size: 1.05rem; font-weight: 700; letter-spacing: -.03em; }
 .logo-note { color: var(--ink-faint); font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
 .header-nav { display: flex; align-items: center; gap: 1.8rem; }
 .nav-link { position: relative; color: var(--ink-soft); font-size: .82rem; text-decoration: none; transition: color .2s ease; }

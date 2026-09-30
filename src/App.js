@@ -6,13 +6,8 @@ import ProjectSection from './components/ProjectSection';
 import Footer from './components/Footer';
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
+  // 첫 테마는 public/index.html 의 인라인 스크립트가 정한다(저장값, 없으면 OS 설정) — 다른 프로젝트 사이트와 같은 규칙.
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light');
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
