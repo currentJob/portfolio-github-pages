@@ -1,24 +1,24 @@
 /* 다른 프로젝트 사이트와 같은 디자인 토큰(기준: city-walk-planner). 밝은/어두운 테마. */
 :root {
-  --paper: #f5f7f4; --paper-deep: #edf1ec; --ink: #203d34; --ink-soft: #626f68;
-  --ink-faint: #86928b; --line: #dbe1db;
+  --paper: #f4f7fa; --paper-deep: #e9eff5; --ink: #1b3346; --ink-soft: #5b6b7a;
+  --ink-faint: #8595a4; --line: #d6e0ea;
   --accent: var(--cj-accent); --accent-soft: color-mix(in srgb, var(--cj-accent) 14%, var(--paper));
-  --cj-surface: var(--paper); --cj-line: var(--line); --cj-ink: var(--ink); --cj-shadow: 0 10px 30px #203d3426;
+  --cj-surface: var(--paper); --cj-line: var(--line); --cj-ink: var(--ink); --cj-shadow: 0 10px 30px #1b334626;
   --sans: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
   /* 제목은 굵은 고딕(city-walk 와 같음). 명조는 로고 워드마크(--brand)에만 쓴다. */
   --serif: var(--sans); --brand: Georgia, 'Noto Serif KR', serif; --mono: var(--sans);
   color-scheme: light;
 }
 [data-theme="dark"] {
-  --paper: #111714; --paper-deep: #1f2924; --ink: #e3ebe6; --ink-soft: #9aaca3;
-  --ink-faint: #74857c; --line: #2e3b34; --cj-surface: #18201c; --cj-shadow: 0 10px 30px #0008;
+  --paper: #0f151b; --paper-deep: #1d2731; --ink: #e2ebf2; --ink-soft: #97a7b6;
+  --ink-faint: #718292; --line: #2b3743; --cj-surface: #161e26; --cj-shadow: 0 10px 30px #0008;
   color-scheme: dark;
 }
-/* Accent palettes, shared by every currentjob project site. Chosen in the header/bar and saved as localStorage "accent".
-   Checked contrast (WCAG): accent as text on page/card/tint backgrounds >= 5.3:1, text on accent buttons >= 6.0:1, in both themes. */
-:root{--cj-accent:#245548;--cj-on-accent:#fff}
-:root[data-theme=dark]{--cj-accent:#7cc4a6;--cj-on-accent:#0e1a14}
-:root[data-accent=sky]{--cj-accent:#0b5f8a}:root[data-theme=dark][data-accent=sky]{--cj-accent:#7cc6ee;--cj-on-accent:#06202e}
+/* Accent palettes, shared by every currentjob project site. Chosen in the header and saved as localStorage "accent" (default: sky).
+   Checked contrast (WCAG): accent as text on page/card/tint backgrounds >= 5.2:1, text on accent buttons >= 6.0:1, in both themes. */
+:root{--cj-accent:#0b5f8a;--cj-on-accent:#fff}
+:root[data-theme=dark]{--cj-accent:#7cc6ee;--cj-on-accent:#06202e}
+:root[data-accent=green]{--cj-accent:#245548}:root[data-theme=dark][data-accent=green]{--cj-accent:#7cc4a6;--cj-on-accent:#0e1a14}
 :root[data-accent=yellow]{--cj-accent:#7a5600}:root[data-theme=dark][data-accent=yellow]{--cj-accent:#f0c75e;--cj-on-accent:#261c00}
 :root[data-accent=purple]{--cj-accent:#5f3bab}:root[data-theme=dark][data-accent=purple]{--cj-accent:#b9a3f5;--cj-on-accent:#1c1233}
 :root[data-accent=orange]{--cj-accent:#a8431b}:root[data-theme=dark][data-accent=orange]{--cj-accent:#f4a27c;--cj-on-accent:#2c1206}

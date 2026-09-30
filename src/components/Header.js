@@ -3,7 +3,7 @@ import './Header.css';
 
 // [id, 이름, 밝은 테마 색, 어두운 테마 색] — 값은 global.css 의 색상표와 같다.
 const ACCENTS = [
-  ['green', '초록', '#245548', '#7cc4a6'], ['sky', '하늘', '#0b5f8a', '#7cc6ee'], ['yellow', '노랑', '#7a5600', '#f0c75e'],
+  ['sky', '하늘', '#0b5f8a', '#7cc6ee'], ['green', '초록', '#245548', '#7cc4a6'], ['yellow', '노랑', '#7a5600', '#f0c75e'],
   ['purple', '보라', '#5f3bab', '#b9a3f5'], ['orange', '주황', '#a8431b', '#f4a27c'], ['rose', '장미', '#a82d5c', '#f39bbd'],
 ];
 

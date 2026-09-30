@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <link rel="icon" href="https://avatars.githubusercontent.com/u/78770258?v=4" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f5f7f4" />
+  <meta name="theme-color" content="#f4f7fa" />
   <meta name="description" content="CurrentJob의 포트폴리오입니다. 제조 현장의 검사·측정·모니터링 시스템을 개발하면서 진행한 프로젝트를 정리했습니다." />
   <meta name="keywords" content="AI, Backend, Engineer, Portfolio, Python, C#, React, Docker" />
   <meta name="author" content="CurrentJob" />
@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t;var a=localStorage.getItem("accent");if(/^(sky|yellow|purple|orange|rose)$/.test(a||""))d.dataset.accent=a}catch(e){}
-(function(){var A=/^(green|sky|yellow|purple|orange|rose)$/;function mark(){var c=document.documentElement.dataset.accent||"green";document.querySelectorAll("[data-cj-accent]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.cjAccent===c))})}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-cj-accent]");if(b&&A.test(b.dataset.cjAccent)){var r=document.documentElement,v=b.dataset.cjAccent;if(v==="green")delete r.dataset.accent;else r.dataset.accent=v;try{localStorage.setItem("accent",v)}catch(_){}mark();var p=b.closest("details");if(p)p.open=false;return}document.querySelectorAll("details.cj-accent[open]").forEach(function(p){if(!p.contains(e.target))p.open=false})});document.addEventListener("toggle",function(e){if(e.target.matches&&e.target.matches("details.cj-accent")&&e.target.open)mark()},true);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mark);else mark()})();</script>
+  <script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t;var a=localStorage.getItem("accent");if(/^(green|yellow|purple|orange|rose)$/.test(a||""))d.dataset.accent=a}catch(e){}
+(function(){var A=/^(green|sky|yellow|purple|orange|rose)$/;function mark(){var c=document.documentElement.dataset.accent||"sky";document.querySelectorAll("[data-cj-accent]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.cjAccent===c))})}document.addEventListener("click",function(e){var tt=e.target.closest&&e.target.closest("[data-cj-theme-toggle]");if(tt){var rt=document.documentElement,nt=rt.dataset.theme==="dark"?"light":"dark";rt.dataset.theme=nt;try{localStorage.setItem("theme",nt)}catch(_){}return}var b=e.target.closest&&e.target.closest("[data-cj-accent]");if(b&&A.test(b.dataset.cjAccent)){var r=document.documentElement,v=b.dataset.cjAccent;if(v==="sky")delete r.dataset.accent;else r.dataset.accent=v;try{localStorage.setItem("accent",v)}catch(_){}mark();var p=b.closest("details");if(p)p.open=false;return}document.querySelectorAll("details.cj-accent[open]").forEach(function(p){if(!p.contains(e.target))p.open=false})});document.addEventListener("toggle",function(e){if(e.target.matches&&e.target.matches("details.cj-accent")&&e.target.open)mark()},true);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mark);else mark()})();</script>
 
   <title>CurrentJob | AI · Backend Engineer</title>
 </head>
