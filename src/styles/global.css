@@ -62,7 +62,7 @@ p { color: var(--ink-soft); text-wrap: pretty; }
 }
 
 /* 강조 색상 선택(헤더) — 다른 프로젝트 사이트와 같은 모양 */
-.cj-accent{position:relative;display:inline-block}
+.cj-accent{position:relative;display:inline-flex;vertical-align:middle}
 .cj-accent>summary{list-style:none;display:inline-grid;place-items:center;width:var(--cj-ctl,26px);height:var(--cj-ctl,26px);border:1px solid var(--cj-line);border-radius:999px;background:var(--cj-surface);cursor:pointer}
 .cj-accent>summary::-webkit-details-marker{display:none}
 .cj-dot{width:12px;height:12px;border-radius:50%;background:var(--cj-accent)}
