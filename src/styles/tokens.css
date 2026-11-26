@@ -1,0 +1,65 @@
+/* Console tokens. Light is the `paper` colourway tinted toward the site's old cool paper; dark is `graphite`.
+   The accent is the shared currentjob accent (header picker, localStorage "accent"), so every project site keeps one signal colour. */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 3.4vw + 0.6rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.0625rem, 0.35vw + 0.95rem, 1.25rem);
+  --text-reading: clamp(3.5rem, 6vw + 1rem, 6.5rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms; --dur-settle: 720ms;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --nav-height: 72px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  --color-paper: oklch(97.6% 0.005 250); --color-paper-2: oklch(99.3% 0.003 250); --color-paper-3: oklch(94.6% 0.008 250);
+  --color-ink: oklch(23% 0.022 250); --color-ink-2: oklch(36% 0.018 250); --color-muted: oklch(47% 0.016 250);
+  --color-rule: oklch(89.5% 0.008 250); --color-rule-2: oklch(79% 0.012 250);
+  --color-ok: oklch(47% 0.12 150); --color-ok-soft: oklch(95.5% 0.03 150);
+  --color-error: oklch(52% 0.17 27); --color-success: oklch(47% 0.12 150);
+  --color-scrim: oklch(23% 0.022 250 / 0.06);
+
+  --font-display: "Host Grotesk", "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-display);
+  --font-outlier: "Atkinson Hyperlegible Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-brand: Georgia, "Noto Serif KR", serif;
+  --radius-card: 10px; --radius-pill: 6px; --radius-chip: 4px; --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.03em; --display-weight: 500;
+
+  /* shared accent: default sky */
+  --cj-accent: oklch(45% 0.11 238); --cj-on-accent: oklch(99.3% 0.003 250);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.008 250); --color-paper-2: oklch(21% 0.009 250); --color-paper-3: oklch(13.5% 0.007 250);
+  --color-ink: oklch(95% 0.005 250); --color-ink-2: oklch(83% 0.008 250); --color-muted: oklch(71% 0.01 250);
+  --color-rule: oklch(31% 0.01 250); --color-rule-2: oklch(42% 0.012 250);
+  --color-ok: oklch(76% 0.15 150); --color-ok-soft: oklch(24.5% 0.03 150);
+  --color-error: oklch(72% 0.15 27); --color-success: oklch(76% 0.13 150);
+  --color-scrim: oklch(13.5% 0.007 250 / 0.5);
+  --cj-accent: oklch(79% 0.09 232); --cj-on-accent: oklch(22% 0.04 232);
+}
+/* Accent palettes, shared by every currentjob project site (same hues as before, written in OKLCH).
+   Accent as text on page and panel >= 5:1, text on accent buttons >= 6:1, in both themes. */
+:root[data-accent="green"] { --cj-accent: oklch(40% 0.06 170); }
+:root[data-theme="dark"][data-accent="green"] { --cj-accent: oklch(77% 0.08 165); --cj-on-accent: oklch(20% 0.02 160); }
+:root[data-accent="yellow"] { --cj-accent: oklch(47% 0.1 80); }
+:root[data-theme="dark"][data-accent="yellow"] { --cj-accent: oklch(84% 0.13 88); --cj-on-accent: oklch(22% 0.04 85); }
+:root[data-accent="purple"] { --cj-accent: oklch(45% 0.17 290); }
+:root[data-theme="dark"][data-accent="purple"] { --cj-accent: oklch(76% 0.11 293); --cj-on-accent: oklch(20% 0.05 293); }
+:root[data-accent="orange"] { --cj-accent: oklch(51% 0.15 40); }
+:root[data-theme="dark"][data-accent="orange"] { --cj-accent: oklch(79% 0.11 45); --cj-on-accent: oklch(22% 0.05 45); }
+:root[data-accent="rose"] { --cj-accent: oklch(49% 0.16 0); }
+:root[data-theme="dark"][data-accent="rose"] { --cj-accent: oklch(78% 0.11 355); --cj-on-accent: oklch(22% 0.05 355); }
+/* swatches in the picker show each accent in the current theme */
+:root { --sw-sky: oklch(45% 0.11 238); --sw-green: oklch(40% 0.06 170); --sw-yellow: oklch(47% 0.1 80); --sw-purple: oklch(45% 0.17 290); --sw-orange: oklch(51% 0.15 40); --sw-rose: oklch(49% 0.16 0); }
+:root[data-theme="dark"] { --sw-sky: oklch(79% 0.09 232); --sw-green: oklch(77% 0.08 165); --sw-yellow: oklch(84% 0.13 88); --sw-purple: oklch(76% 0.11 293); --sw-orange: oklch(79% 0.11 45); --sw-rose: oklch(78% 0.11 355); }
+:root {
+  --color-accent: var(--cj-accent); --color-accent-ink: var(--cj-on-accent);
+  --color-accent-soft: color-mix(in oklab, var(--cj-accent) 13%, var(--color-paper-2));
+  --color-focus: var(--cj-accent);
+  /* the accent picker reads these */
+  --cj-surface: var(--color-paper-2); --cj-line: var(--color-rule); --cj-ink: var(--color-ink);
+}

@@ -1,13 +1,18 @@
-.site-footer { padding: 2.5rem 0; background: var(--ink); color: var(--paper); }
-.footer-container { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.footer-logo-text { font-family: var(--brand); font-size: .9rem; }
-.footer-copyright { color: color-mix(in srgb, var(--paper) 45%, transparent); font-size: .62rem; }
-.footer-links { display: flex; align-items: center; gap: .5rem; }
-.footer-links .footer-mail { width: auto; font-size: .8rem; text-decoration: none; }
-.footer-links a { display: grid; place-items: center; width: 36px; height: 36px; color: var(--paper); }
-.footer-links a:hover { color: var(--accent); }
-@media (max-width: 700px) {
-  .footer-container { width: calc(100% - 2rem); }
-  .footer-bottom { align-items: flex-start; flex-direction: column; }
+/* Hallmark · part of the Console redesign; the stamp, critique and waivers are in src/styles/global.css */
+.site-footer { padding-block: var(--space-3xl) var(--space-xl); padding-bottom: max(var(--space-xl), env(safe-area-inset-bottom)); border-top: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-3); }
+.footer-container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.footer-brand { padding-bottom: var(--space-2xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.footer-logo-text { display: block; font-family: var(--font-brand); font-size: clamp(2.25rem, 7vw, 6.5rem); font-weight: 700; line-height: 1; letter-spacing: -0.04em; overflow-wrap: break-word; }
+.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md); padding-top: var(--space-lg); }
+.footer-links { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); }
+.footer-links a { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; color: var(--color-ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--color-rule-2); text-underline-offset: 0.3em; border-radius: var(--radius-chip); transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
+.footer-links svg { flex-shrink: 0; }
+.footer-links a:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.footer-links a:active { opacity: 0.8; }
+.footer-links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.footer-copyright { color: var(--color-muted); font-size: var(--text-sm); }
+@media (max-width: 40rem) {
+  .site-footer { padding-top: var(--space-2xl); }
+  .footer-brand { padding-bottom: var(--space-xl); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }

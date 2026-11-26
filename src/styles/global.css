@@ -1,72 +1,108 @@
-/* 다른 프로젝트 사이트와 같은 디자인 토큰(기준: city-walk-planner). 밝은/어두운 테마. */
-:root {
-  --paper: #f4f7fa; --paper-deep: #e9eff5; --ink: #1b3346; --ink-soft: #5b6b7a;
-  --ink-faint: #8595a4; --line: #d6e0ea;
-  --accent: var(--cj-accent); --accent-soft: color-mix(in srgb, var(--cj-accent) 14%, var(--paper));
-  --cj-surface: var(--paper); --cj-line: var(--line); --cj-ink: var(--ink); --cj-shadow: 0 10px 30px #1b334626;
-  --sans: system-ui, -apple-system, 'Segoe UI', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-  /* 제목은 굵은 고딕(city-walk 와 같음). 명조는 로고 워드마크(--brand)에만 쓴다. */
-  --serif: var(--sans); --brand: Georgia, 'Noto Serif KR', serif; --mono: var(--sans);
-  color-scheme: light;
+/* Hallmark · shape: Index-First (case studies as the page) · genre: modern-minimal · theme: Console (deal 3/3, seed portfolio-manufacturing-backend-engineer-40b0·8b414d2e·2026-11-26·r0) · redesign: full · job: hire · copy: verbatim
+ * hero: Stage · nav: floating pill bar, wordmark left, links and the theme controls right · footer: mast, the wordmark large over mail and GitHub · imagery: the GitHub avatar and the work as readings, no stock · signature: a reading panel in the hero, the measured results (83% struck, 99.7%) switched by project · console: paper (light) and graphite (dark), accent from the shared cj-accent picker
+ * axes: dark/grotesk-sans/chromatic-sky · posture: restrained · contrast: pass · fold: pass · motion: the user asked for animation where it helps, so the theme's no-reveal rule yields: hero settle, one scroll reveal, value changes, disclosures, filter re-entry, menu sheet, scroll progress · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V4 · weakest: P, a portfolio argues little; the hero leads with measured results instead of a greeting band of stats */
+/* Hallmark · dropped "CurrentJob · 포트폴리오", "01 · About", "02 · Projects" · 54 names the eyebrow; the name stays in the h1 and the headings stand alone */
+/* Hallmark · waive 49b · three real blog post titles wrap at 320px, up to three lines · titles come live from the blog's contentIndex.json and cannot be shortened here */
+/* Hallmark · waive 44c · the render tier measures the hero mid-entrance and counts only the h1; at rest the reading panel and actions fill to 685px of 800 at 1280 · the hero text and panel settle in over 720ms */
+/* Hallmark · waive 79 · the same mid-entrance measure as 44c; the rendered hero centres text and the reading panel with under 160px below at 1280 · the gap closes once the settle finishes */
+/* Hallmark · dismissed 23 · .scroll-progress is a 2px reading bar across the top, well under 1% of the viewport */
+/* Hallmark · dismissed 41 · .panels paints the rule colour only in its 1px seams; every cell sets paper-2 and inherits the ink */
+/* Hallmark · dismissed F4 · the selected reading tab is a state tint, not a filled button; the one filled primary is 프로젝트 보기 */
+/* Hallmark · answered F20 · in case-body the implementation list spans two rows beside background and checks, so the third block is not an orphan */
+@import url("./tokens.css");
+@import url("./base.css");
+
+body { line-height: 1.65; word-break: keep-all; transition: background-color var(--dur-long) var(--ease-out), color var(--dur-long) var(--ease-out); }
+p { color: var(--color-muted); }
+h4 { margin: 0; font-weight: 500; font-size: var(--text-md); line-height: 1.4; color: var(--color-ink); }
+ul, ol { margin: 0; padding: 0; }
+button { color: inherit; }
+.app-container { min-height: 100dvh; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.measured { font-family: var(--font-outlier); font-variant-numeric: tabular-nums slashed-zero; letter-spacing: 0; }
+
+/* way past the nav */
+.skip-link { position: fixed; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper); text-decoration: none; }
+.skip-link:focus-visible { top: var(--space-md); }
+
+/* scroll progress, scroll-driven where supported */
+.scroll-progress { position: fixed; inset: 0 0 auto; z-index: var(--z-toast); height: 2px; background: var(--color-accent); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+@supports (animation-timeline: scroll()) {
+  .scroll-progress { animation: progress linear both; animation-timeline: scroll(root); }
 }
-[data-theme="dark"] {
-  --paper: #0f151b; --paper-deep: #1d2731; --ink: #e2ebf2; --ink-soft: #97a7b6;
-  --ink-faint: #718292; --line: #2b3743; --cj-surface: #161e26; --cj-shadow: 0 10px 30px #0008;
-  color-scheme: dark;
-}
-/* Accent palettes, shared by every currentjob project site. Chosen in the header and saved as localStorage "accent" (default: sky).
-   Checked contrast (WCAG): accent as text on page/card/tint backgrounds >= 5.2:1, text on accent buttons >= 6.0:1, in both themes. */
-:root{--cj-accent:#0b5f8a;--cj-on-accent:#fff}
-:root[data-theme=dark]{--cj-accent:#7cc6ee;--cj-on-accent:#06202e}
-:root[data-accent=green]{--cj-accent:#245548}:root[data-theme=dark][data-accent=green]{--cj-accent:#7cc4a6;--cj-on-accent:#0e1a14}
-:root[data-accent=yellow]{--cj-accent:#7a5600}:root[data-theme=dark][data-accent=yellow]{--cj-accent:#f0c75e;--cj-on-accent:#261c00}
-:root[data-accent=purple]{--cj-accent:#5f3bab}:root[data-theme=dark][data-accent=purple]{--cj-accent:#b9a3f5;--cj-on-accent:#1c1233}
-:root[data-accent=orange]{--cj-accent:#a8431b}:root[data-theme=dark][data-accent=orange]{--cj-accent:#f4a27c;--cj-on-accent:#2c1206}
-:root[data-accent=rose]{--cj-accent:#a82d5c}:root[data-theme=dark][data-accent=rose]{--cj-accent:#f39bbd;--cj-on-accent:#2e0c1a}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-body {
-  min-height: 100vh; overflow-x: hidden; background: var(--paper); color: var(--ink);
-  font-family: var(--sans); line-height: 1.75; word-break: keep-all;
-  transition: background-color .25s ease, color .25s ease;
-}
-a { color: inherit; } button { font: inherit; }
-h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; font-weight: 700; letter-spacing: -.035em; }
-p { color: var(--ink-soft); text-wrap: pretty; }
-.mono { font-family: var(--mono); }
-.app-container { min-height: 100vh; }
-.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: var(--ink); color: var(--paper); padding: .7rem 1rem; text-decoration: none; }
-.skip-link:focus { top: 1rem; }
-.section { padding: 8rem 0 9rem; }
-.section-container { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
-.section-header { margin-bottom: 4.5rem; }
-.section-label { display: block; margin-bottom: 1.25rem; color: var(--accent); font-family: var(--mono); font-size: .74rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.section-title { max-width: 780px; font-family: var(--serif); font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 600; line-height: 1.2; letter-spacing: -.055em; }
-.section-subtitle { max-width: 580px; margin-top: 1.5rem; font-size: 1rem; }
-.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
-.fade-in-up.visible, .fade-in-left.visible, .fade-in-right.visible, .fade-in-scale.visible { opacity: 1; transform: none; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-::selection { background: var(--accent); color: var(--paper); }
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--paper); }
-::-webkit-scrollbar-thumb { background: var(--line); border: 3px solid var(--paper); }
-@media (max-width: 700px) {
-  .section { padding: 5.5rem 0 6rem; }
-  .section-container { width: min(100% - 2rem, 1120px); }
-  .section-header { margin-bottom: 3rem; }
+@keyframes progress { to { transform: scaleX(1); } }
+
+/* sections */
+.section { padding-block: var(--section-gap) var(--section-gap-l); }
+.section-container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.section-head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: end; margin-bottom: var(--space-2xl); }
+.section-title { grid-column: 1 / 7; }
+.section-subtitle { grid-column: 7 / 12; max-width: 46ch; font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-2); }
+.group-title { font-size: var(--text-2xl); line-height: 1.15; }
+
+/* panels: one surface, 1px seams */
+.panels { display: grid; gap: var(--rule-hair); background: var(--color-rule); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden; }
+.panels > * { min-width: 0; background: var(--color-paper-2); transition: background-color var(--dur-short) var(--ease-out); }
+
+/* controls, eight states */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: var(--rule-hair) solid var(--color-rule-2); border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink); font: 500 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { border-color: var(--color-ink-2); background: var(--color-paper-3); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--primary { border-color: var(--color-accent); background: var(--color-accent); color: var(--color-accent-ink); }
+.btn--primary:hover { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-paper); }
+.btn .icon { transition: transform var(--dur-short) var(--ease-out); }
+.btn:hover .icon--down { transform: translateY(2px); }
+.btn:hover .icon--out, .text-link:hover .icon--out { transform: translate(2px, -2px); }
+
+.icon { flex-shrink: 0; width: 1em; height: 1em; }
+
+.text-link { display: inline-flex; align-items: center; gap: var(--space-2xs); min-height: 44px; color: var(--color-ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--color-rule-2); text-underline-offset: 0.3em; transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
+.text-link .icon { transition: transform var(--dur-short) var(--ease-out); }
+.text-link:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.text-link:active { opacity: 0.8; }
+.text-link:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-chip); }
+
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.tag { display: inline-flex; align-items: center; min-height: 28px; padding: 0 var(--space-xs); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-chip); background: var(--color-paper); color: var(--color-ink-2); font-size: var(--text-xs); line-height: 1; }
+
+/* one reveal, visible without script */
+.js [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity var(--dur-settle) var(--ease-out), transform var(--dur-settle) var(--ease-out); transition-delay: calc(var(--i, 0) * 60ms); }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* re-entry after a filter or a value change */
+@keyframes enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes settle { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes open-body { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* accent picker, shared with the other currentjob sites */
+.cj-accent { position: relative; display: inline-flex; }
+.cj-accent > summary { list-style: none; display: inline-grid; place-items: center; width: var(--cj-ctl, 40px); height: var(--cj-ctl, 40px); border: var(--rule-hair) solid var(--cj-line); border-radius: var(--radius-pill); background: var(--cj-surface); cursor: pointer; transition: border-color var(--dur-short) var(--ease-out); }
+.cj-accent > summary::-webkit-details-marker { display: none; }
+.cj-accent > summary:hover { border-color: var(--color-rule-2); }
+.cj-accent > summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.cj-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--cj-accent); transition: transform var(--dur-short) var(--ease-out); }
+.cj-accent > summary:hover .cj-dot { transform: scale(1.15); }
+.cj-swatches { position: absolute; right: 0; top: calc(100% + var(--space-xs)); z-index: var(--z-dropdown); display: grid; grid-template-columns: repeat(3, 36px); gap: var(--space-sm); padding: var(--space-sm); border: var(--rule-hair) solid var(--cj-line); border-radius: var(--radius-card); background: var(--cj-surface); transform-origin: top right; }
+.cj-accent[open] .cj-swatches { animation: pop var(--dur-short) var(--ease-out); }
+@keyframes pop { from { opacity: 0; transform: translateY(-4px) scale(0.96); } to { opacity: 1; transform: none; } }
+.cj-swatches button { width: 36px; height: 36px; padding: 0; border: 3px solid var(--cj-surface); border-radius: 50%; outline: 1px solid var(--cj-line); background: var(--sw, var(--cj-accent)); cursor: pointer; transition: transform var(--dur-micro) var(--ease-out); }
+.cj-swatches button:hover { transform: scale(1.08); }
+.cj-swatches button:active { transform: scale(0.96); }
+.cj-swatches button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.cj-swatches button[aria-pressed="true"] { outline: 2px solid var(--cj-ink); }
+.cj-swatches [data-cj-accent="sky"] { --sw: var(--sw-sky); } .cj-swatches [data-cj-accent="green"] { --sw: var(--sw-green); }
+.cj-swatches [data-cj-accent="yellow"] { --sw: var(--sw-yellow); } .cj-swatches [data-cj-accent="purple"] { --sw: var(--sw-purple); }
+.cj-swatches [data-cj-accent="orange"] { --sw: var(--sw-orange); } .cj-swatches [data-cj-accent="rose"] { --sw: var(--sw-rose); }
+
+@media (max-width: 60rem) {
+  .section-head { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-md); margin-bottom: var(--space-xl); }
+  .section-title, .section-subtitle { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale { opacity: 1 !important; transform: none !important; }
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .scroll-progress { display: none; }
+  body { transition: none; }
 }
-
-/* 강조 색상 선택(헤더) — 다른 프로젝트 사이트와 같은 모양 */
-.cj-accent{position:relative;display:inline-flex;vertical-align:middle}
-.cj-accent>summary{list-style:none;display:inline-grid;place-items:center;width:var(--cj-ctl,26px);height:var(--cj-ctl,26px);border:1px solid var(--cj-line);border-radius:999px;background:var(--cj-surface);cursor:pointer}
-.cj-accent>summary::-webkit-details-marker{display:none}
-.cj-dot{width:12px;height:12px;border-radius:50%;background:var(--cj-accent)}
-.cj-swatches{position:absolute;right:0;top:calc(100% + 8px);z-index:3000;display:grid;grid-template-columns:repeat(3,34px);gap:10px;padding:12px;background:var(--cj-surface);border:1px solid var(--cj-line);border-radius:12px;box-shadow:var(--cj-shadow)}
-.cj-swatches button{width:34px;height:34px;min-height:0;margin:0;padding:0;border:3px solid var(--cj-surface);border-radius:50%;outline:1px solid var(--cj-line);background:var(--l);box-shadow:none;cursor:pointer}
-:root[data-theme=dark] .cj-swatches button{background:var(--d)}
-.cj-swatches button[aria-pressed=true]{outline:2px solid var(--cj-ink)}

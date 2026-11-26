@@ -16,35 +16,31 @@ function App() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  // Intersection Observer for scroll animations
+  // 스크롤 등장 효과: 요소는 기본으로 보이고, index.html 이 붙인 .js 클래스 아래에서만 숨겼다가 화면에 들어오면 나타난다.
   useEffect(() => {
+    const els = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach((el) => el.classList.add('is-in'));
+      return undefined;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('is-in');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -8% 0px' }
     );
-
-    // Small delay to let React finish rendering
-    const timer = setTimeout(() => {
-      const animatedElements = document.querySelectorAll(
-        '.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-scale'
-      );
-      animatedElements.forEach((el) => observer.observe(el));
-    }, 100);
-
-    return () => {
-      clearTimeout(timer);
-      observer.disconnect();
-    };
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="app-container">
+      <div className="scroll-progress" aria-hidden="true" />
       <a className="skip-link" href="#main-content">본문으로 바로가기</a>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main id="main-content">
